@@ -3,67 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>India Industry Screener — Top 3 per Industry</title>
-<meta name="description" content="Educational quantitative stock screen: top 3 companies per Indian industry on fundamental-quality metrics. Not investment advice.">
+<title>India Industry Screener — Daily Fundamental Screen</title>
+<meta name="description" content="Daily educational quantitative screen of Indian listed industries with transparent coverage, quality filters and source links. Not investment advice.">
 <style>
-  :root {
-    --bg:#f7f8fa; --card:#fff; --ink:#12151c; --muted:#5b6472; --line:#e6e9ee;
-    --accent:#1f6feb; --ok:#0f8a4f; --weak:#c2410c; --flag:#b45309; --pass:#0f8a4f;
-    --chip:#eef1f6;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#9aa4b2;
-      --line:#272e38; --accent:#4c8dff; --ok:#3fb950; --weak:#f0883e; --flag:#d29922;
-      --pass:#3fb950; --chip:#21262d; }
-  }
-  :root[data-theme="dark"] { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#9aa4b2;
-    --line:#272e38; --accent:#4c8dff; --ok:#3fb950; --weak:#f0883e; --flag:#d29922; --pass:#3fb950; --chip:#21262d; }
-  :root[data-theme="light"] { --bg:#f7f8fa; --card:#fff; --ink:#12151c; --muted:#5b6472;
-    --line:#e6e9ee; --accent:#1f6feb; --ok:#0f8a4f; --weak:#c2410c; --flag:#b45309; --pass:#0f8a4f; --chip:#eef1f6; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink);
-    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
-  .wrap { max-width:1100px; margin:0 auto; padding:24px 18px 80px; }
-  header h1 { font-size:1.9rem; margin:0 0 6px; letter-spacing:-.02em; }
-  .sub { color:var(--muted); margin:0 0 4px; }
-  .stamp { color:var(--muted); font-size:.85rem; }
-  .disclaimer { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--flag);
-    border-radius:10px; padding:14px 16px; margin:18px 0 8px; font-size:.9rem; color:var(--muted); }
-  .disclaimer b { color:var(--ink); }
-  .method { background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:14px 16px; margin:14px 0 26px; font-size:.9rem; }
-  .method summary { cursor:pointer; font-weight:600; color:var(--ink); }
-  .method ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
-  .group > h2 { font-size:1.15rem; margin:34px 0 8px; padding-bottom:6px; border-bottom:2px solid var(--line); }
-  .ind { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin:14px 0; }
-  .ind-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
-  .ind h3 { margin:0; font-size:1.05rem; }
-  .cov { color:var(--muted); font-size:.8rem; white-space:nowrap; }
-  .kind { font-size:.65rem; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px;
-    border-radius:20px; background:var(--chip); color:var(--muted); vertical-align:middle; margin-left:6px; }
-  .kind.cyclical { color:var(--weak); } .kind.financial { color:var(--accent); }
-  .kind.realestate { color:var(--flag); }
-  .kpi { margin:8px 0 2px; font-size:.86rem; color:var(--muted); }
-  .kpi b { color:var(--ink); }
-  .note { margin:2px 0 10px; font-size:.82rem; color:var(--muted); font-style:italic; }
-  .twrap { overflow-x:auto; }
-  table { width:100%; border-collapse:collapse; font-size:.86rem; min-width:640px; }
-  th, td { padding:8px 10px; text-align:left; border-bottom:1px solid var(--line); }
-  th.num, td.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
-  thead th { color:var(--muted); font-weight:600; font-size:.78rem; }
-  td.num.ok { color:var(--ok); } td.num.weak { color:var(--weak); }
-  .tk .sym { font-weight:700; }
-  .cname { color:var(--muted); font-size:.76rem; margin-top:2px; }
-  .fails { color:var(--flag); font-size:.72rem; margin-top:2px; }
-  .badge { font-size:.62rem; text-transform:uppercase; letter-spacing:.03em; padding:2px 6px;
-    border-radius:20px; margin-left:8px; vertical-align:middle; }
-  .badge.pass { background:color-mix(in srgb,var(--pass) 18%,transparent); color:var(--pass); }
-  .badge.flag { background:color-mix(in srgb,var(--flag) 18%,transparent); color:var(--flag); }
-  .empty { color:var(--muted); text-align:center; font-style:italic; }
-  .toggle { position:fixed; top:14px; right:14px; background:var(--card); border:1px solid var(--line);
-    color:var(--ink); border-radius:20px; padding:6px 12px; font-size:.8rem; cursor:pointer; }
-  footer { margin-top:40px; color:var(--muted); font-size:.8rem; text-align:center; }
-  a { color:var(--accent); }
+  :root { --bg:#f5f7fb; --card:#fff; --ink:#101828; --muted:#667085; --line:#e4e7ec; --accent:#175cd3; --ok:#067647; --weak:#b42318; --flag:#b54708; --chip:#eef4ff; --shadow:0 8px 24px rgba(16,24,40,.06); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --card:#111a2b; --ink:#f2f4f7; --muted:#98a2b3; --line:#27344a; --accent:#84adff; --ok:#6ce9a6; --weak:#f97066; --flag:#fdb022; --chip:#1d2939; --shadow:none; } }
+  :root[data-theme="dark"] { --bg:#0b1220; --card:#111a2b; --ink:#f2f4f7; --muted:#98a2b3; --line:#27344a; --accent:#84adff; --ok:#6ce9a6; --weak:#f97066; --flag:#fdb022; --chip:#1d2939; --shadow:none; }
+  :root[data-theme="light"] { --bg:#f5f7fb; --card:#fff; --ink:#101828; --muted:#667085; --line:#e4e7ec; --accent:#175cd3; --ok:#067647; --weak:#b42318; --flag:#b54708; --chip:#eef4ff; --shadow:0 8px 24px rgba(16,24,40,.06); }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  .wrap { max-width:1180px; margin:0 auto; padding:28px 18px 80px; } header { padding-right:70px; } header h1 { font-size:2rem; margin:0 0 4px; letter-spacing:-.03em; } .sub { color:var(--muted); margin:0 0 4px; } .stamp { color:var(--muted); font-size:.84rem; }
+  .status { display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 14px; } .status-card { flex:1 1 150px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; box-shadow:var(--shadow); } .status-card b { display:block; font-size:1.3rem; } .status-card span { color:var(--muted); font-size:.78rem; }
+  .banner { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--flag); border-radius:10px; padding:13px 15px; margin:14px 0; font-size:.88rem; color:var(--muted); } .banner b { color:var(--ink); }
+  .controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px; margin:14px 0 24px; position:sticky; top:0; z-index:2; box-shadow:var(--shadow); } input, select, button { font:inherit; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); padding:8px 10px; } input { flex:1 1 240px; } button { cursor:pointer; } .hint { color:var(--muted); font-size:.78rem; margin-left:auto; }
+  .method { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:13px 15px; margin:0 0 24px; font-size:.88rem; } .method summary { cursor:pointer; font-weight:650; } .method ul { margin:10px 0 0; padding-left:18px; color:var(--muted); }
+  .group > h2 { font-size:1.12rem; margin:30px 0 8px; padding-bottom:6px; border-bottom:2px solid var(--line); } .ind { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin:13px 0; box-shadow:var(--shadow); } .ind.hidden { display:none; }
+  .ind-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; } .ind h3 { margin:0; font-size:1.04rem; } .cov { color:var(--muted); font-size:.78rem; white-space:nowrap; } .kind { font-size:.63rem; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px; border-radius:20px; background:var(--chip); color:var(--muted); vertical-align:middle; margin-left:6px; } .kind.cyclical { color:var(--weak); } .kind.financial { color:var(--accent); } .kind.realestate { color:var(--flag); }
+  .kpi { margin:8px 0 2px; font-size:.84rem; color:var(--muted); } .kpi b { color:var(--ink); } .note { margin:2px 0 10px; font-size:.81rem; color:var(--muted); font-style:italic; } .twrap { overflow-x:auto; } table { width:100%; border-collapse:collapse; font-size:.81rem; min-width:860px; } th, td { padding:8px 8px; text-align:left; border-bottom:1px solid var(--line); } th.num, td.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; } thead th { color:var(--muted); font-weight:650; font-size:.74rem; } td.num.ok { color:var(--ok); } td.num.weak { color:var(--weak); } .tk .sym { font-weight:750; color:var(--accent); text-decoration:none; } .cname { color:var(--muted); font-size:.73rem; margin-top:2px; } .fails { color:var(--flag); font-size:.7rem; margin-top:2px; } .score { font-weight:700; } .badge { font-size:.59rem; text-transform:uppercase; letter-spacing:.03em; padding:2px 5px; border-radius:20px; margin-left:5px; vertical-align:middle; white-space:nowrap; } .badge.pass, .badge.fresh { background:color-mix(in srgb,var(--ok) 16%,transparent); color:var(--ok); } .badge.flag, .badge.carry { background:color-mix(in srgb,var(--flag) 16%,transparent); color:var(--flag); } .empty { color:var(--muted); text-align:center; font-style:italic; }
+  .lower { display:grid; grid-template-columns:1.1fr .9fr; gap:14px; margin-top:24px; } .panel { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:15px; } .panel h2 { font-size:1rem; margin:0 0 8px; } .panel p { color:var(--muted); font-size:.82rem; margin:0 0 8px; } .leaders { margin:0; padding-left:19px; color:var(--muted); font-size:.82rem; } .leaders li { margin:5px 0; } .leaders b { color:var(--ink); } .leaders span { float:right; color:var(--accent); font-variant-numeric:tabular-nums; }
+  .toggle { position:fixed; top:14px; right:14px; background:var(--card); border:1px solid var(--line); color:var(--ink); border-radius:20px; padding:6px 12px; font-size:.78rem; cursor:pointer; z-index:3; } footer { margin-top:34px; color:var(--muted); font-size:.78rem; text-align:center; } a { color:var(--accent); }
+  @media (max-width:720px) { .wrap { padding:22px 12px 60px; } header h1 { font-size:1.65rem; } .lower { grid-template-columns:1fr; } .hint { width:100%; margin-left:0; } }
 </style>
 </head>
 <body>
@@ -71,54 +29,65 @@
 <div class="wrap">
   <header>
     <h1>India Industry Screener</h1>
-    <p class="sub">Top 3 companies per industry on fundamental-quality metrics · ranked automatically from screener.in data</p>
-    <p class="stamp">Last refreshed: <b>2026-10-15 07:47 UTC</b> · 30 industries · refreshes on the 1st &amp; 15th of each month</p>
+    <p class="sub">Daily, transparent quality screen across Indian industries · source-linked company rows · no price targets or buy/sell calls</p>
+    <p class="stamp">Last refreshed: <b>2026-10-15 07:47 UTC</b> · 30 industries · planned daily refresh around 08:00 IST</p>
   </header>
 
-  <div class="disclaimer">
-    <b>Educational tool — not investment advice.</b> This page is the output of an automated
-    quantitative screen and is for information and educational purposes only. It is <b>not</b> a
-    recommendation, solicitation, or advice to buy, sell, or hold any security, and contains no
-    price targets or buy/sell calls. The author is <b>not</b> a SEBI-registered Research Analyst or
-    Investment Adviser. Rankings are mechanical, may contain data errors, and must not be relied
-    upon for any financial decision. Do your own research and consult a SEBI-registered adviser.
+  <div class="status">
+    <div class="status-card"><b>210/213</b><span>candidate coverage</span></div>
+    <div class="status-card"><b>36</b><span>PASS rows in top 3</span></div>
+    <div class="status-card"><b>89</b><span>fresh top rows</span></div>
+    <div class="status-card"><b>0</b><span>fetch failures</span></div>
+  </div>
+
+  <div class="banner">
+    <b>Data status: Healthy: 89 fresh rows</b>. Metrics are trailing reported figures from
+    <a href="https://www.screener.in/" target="_blank" rel="noopener">screener.in</a>.
+    Carried-forward rows are explicitly labelled; verify source pages before using any figure.
+  </div>
+
+  <div class="banner">
+    <b>Educational tool — not investment advice.</b> This automated screen is for information and
+    education only. It is not a recommendation, solicitation, or advice to buy, sell, or hold any
+    security. The author is not a SEBI-registered Research Analyst or Investment Adviser. Rankings
+    may contain data errors. Do your own research and consult a SEBI-registered adviser.
   </div>
 
   <details class="method">
-    <summary>How this screen works</summary>
+    <summary>Method, filters and data limitations</summary>
     <ul>
-      <li><b>Base quality filter:</b> ROCE ≥ 15%, ROE ≥ 15%,
-        5yr sales CAGR ≥ 10%, 5yr profit CAGR ≥ 12%,
-        Debt/Equity ≤ 1. A <span class="badge pass">PASS</span> badge means all
-        applicable thresholds are met; <span class="badge flag">flagged</span> means the name ranks
-        top-3 but misses one or more (hover to see which).</li>
-      <li><b>Financials</b> (banks, NBFCs, insurers) are ranked on ROE + profit/sales growth —
-        ROCE, OPM and D/E are not meaningful for lenders. Their true KPIs (ROA, NIM, GNPA, combined
-        ratio, VNB) are <i>not</i> scraped; treat those rankings as indicative and review manually.</li>
-      <li><b>Cyclicals</b> (metals, cement, power, oil &amp; gas, hotels) and <b>real estate</b>
-        structurally fail the quality filter — they are ranked on relative strength, not absolute pass.</li>
-      <li>Metrics are scraped from public screener.in company pages (consolidated where available)
-        and reflect trailing reported figures. Sector KPIs shown as "Deciding metric" are analyst
-        context, not live data.</li>
+      <li><b>Base quality filter:</b> ROCE ≥ 15.0%, ROE ≥ 15.0%, 5-year sales CAGR ≥ 10.0%, 5-year profit CAGR ≥ 12.0%, D/E ≤ 1.0. PASS means all applicable thresholds are met.</li>
+      <li><b>Financials</b> use ROE and growth because ROCE, OPM and D/E are not comparable for lenders. Review ROA, NIM, GNPA/NNPA, CASA, CAR, VNB and combined ratio separately.</li>
+      <li><b>Cyclicals and real estate</b> are shown for relative context; trailing returns can be structurally misleading at different points in the cycle.</li>
+      <li>Rows link to the consolidated company page on screener.in. The screen does not scrape sector KPIs, news, management quality, valuations beyond P/E, or forward estimates.</li>
+      <li>Daily scheduling is best-effort: GitHub Actions can delay scheduled jobs. The timestamp and fetch status above are the source of truth.</li>
     </ul>
   </details>
 
-  <div class="group"><h2>Financials</h2><section class="ind">
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search company or ticker…" aria-label="Search company or ticker">
+    <select id="kind"><option value="">All industry types</option><option value="general">General</option><option value="financial">Financial</option><option value="cyclical">Cyclical</option><option value="realestate">Real estate</option></select>
+    <select id="quality"><option value="">All quality states</option><option value="pass">PASS only</option><option value="flag">Flagged only</option><option value="carry">Carried-forward rows</option></select>
+    <button onclick="resetFilters()">Reset</button><span class="hint" id="count"></span>
+  </div>
+
+  <div id="sections"><div class="group"><h2>Financials</h2><section class="ind" id="private-banks" data-kind="financial" data-industry="Private Banks">
       <div class="ind-head">
         <h3>Private Banks <span class="kind financial">financial</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROA &gt;1.5%, NIM, GNPA/NNPA, CASA, CAR (not scraped — manual review)</p>
       <p class="note">Banks ranked on ROE + profit growth; ROCE/OPM/D-E are not meaningful for lenders.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">AXISBANK</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+        <tbody><tr class="company-row" data-search="AXISBANK Axis Bank Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/AXISBANK/consolidated/" target="_blank" rel="noopener">AXISBANK</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Axis Bank Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹1,292.00</td>
       <td class="num">₹402,358 cr</td>
       <td class="num weak">6.24%</td>
       <td class="num weak">13.1%</td>
@@ -127,9 +96,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">14.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ICICIBANK</span><span class="badge pass">PASS</span>
+      <td class="num score">65.7</td>
+    </tr><tr class="company-row" data-search="ICICIBANK ICICI Bank Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ICICIBANK/consolidated/" target="_blank" rel="noopener">ICICIBANK</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">ICICI Bank Ltd</div></td>
+      <td class="num">₹1,382.00</td>
       <td class="num">₹992,102 cr</td>
       <td class="num weak">7.18%</td>
       <td class="num ok">15.9%</td>
@@ -138,9 +109,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">17.7</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">HDFCBANK</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">64.8</td>
+    </tr><tr class="company-row" data-search="HDFCBANK HDFC Bank Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/HDFCBANK/consolidated/" target="_blank" rel="noopener">HDFCBANK</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">HDFC Bank Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹726.00</td>
       <td class="num">₹1,119,236 cr</td>
       <td class="num weak">7.02%</td>
       <td class="num weak">13.6%</td>
@@ -149,24 +122,26 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">14.2</td>
+      <td class="num score">61.4</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="psu-banks" data-kind="financial" data-industry="PSU Banks">
       <div class="ind-head">
         <h3>PSU Banks <span class="kind financial">financial</span></h3>
-        <span class="cov">6/6 screened</span>
+        <span class="cov">6/6 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROA &gt;0.9%, GNPA/NNPA, CASA, CAR, P/B (not scraped)</p>
       <p class="note">Ranked on ROE + profit growth. Verify asset-quality on screener.in before use.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">BANKBARODA</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+        <tbody><tr class="company-row" data-search="BANKBARODA Bank of Baroda" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BANKBARODA/consolidated/" target="_blank" rel="noopener">BANKBARODA</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Bank of Baroda</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹229.00</td>
       <td class="num">₹118,579 cr</td>
       <td class="num weak">5.63%</td>
       <td class="num weak">12.7%</td>
@@ -175,9 +150,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">5.42</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">CANBK</span><span class="badge pass">PASS</span>
+      <td class="num score">105</td>
+    </tr><tr class="company-row" data-search="CANBK Canara Bank" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CANBK/consolidated/" target="_blank" rel="noopener">CANBK</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Canara Bank</div></td>
+      <td class="num">₹118.00</td>
       <td class="num">₹107,170 cr</td>
       <td class="num weak">6.52%</td>
       <td class="num ok">16.1%</td>
@@ -186,9 +163,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">5.26</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">UNIONBANK</span><span class="badge flag" title="sales5y&lt;10">flagged</span>
+      <td class="num score">80.2</td>
+    </tr><tr class="company-row" data-search="UNIONBANK Union Bank of India" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/UNIONBANK/consolidated/" target="_blank" rel="noopener">UNIONBANK</a><span class="badge flag" title="sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Union Bank of India</div><div class="fails">misses: sales5y&lt;10</div></td>
+      <td class="num">₹172.00</td>
       <td class="num">₹131,145 cr</td>
       <td class="num weak">6.3%</td>
       <td class="num ok">15.7%</td>
@@ -197,24 +176,26 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">6.35</td>
+      <td class="num score">79.5</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="nbfcs" data-kind="financial" data-industry="NBFCs">
       <div class="ind-head">
         <h3>NBFCs <span class="kind financial">financial</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 3 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROA, NIM/spread, GNPA/NNPA, cost-to-income, CAR, AUM growth (not scraped)</p>
       <p class="note">Ranked on ROE + profit growth.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">MUTHOOTFIN</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="MUTHOOTFIN Muthoot Finance Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/MUTHOOTFIN/consolidated/" target="_blank" rel="noopener">MUTHOOTFIN</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Muthoot Finance Ltd</div></td>
+      <td class="num">₹2,587.00</td>
       <td class="num">₹103,872 cr</td>
       <td class="num ok">15.8%</td>
       <td class="num ok">30.9%</td>
@@ -223,9 +204,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">9.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BAJFINANCE</span><span class="badge pass">PASS</span>
+      <td class="num score">91.3</td>
+    </tr><tr class="company-row" data-search="BAJFINANCE Bajaj Finance Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BAJFINANCE/consolidated/" target="_blank" rel="noopener">BAJFINANCE</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Bajaj Finance Ltd</div></td>
+      <td class="num">₹967.00</td>
       <td class="num">₹601,925 cr</td>
       <td class="num weak">10.9%</td>
       <td class="num ok">18.2%</td>
@@ -234,9 +217,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">29.4</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">CHOLAFIN</span><span class="badge pass">PASS</span>
+      <td class="num score">86.3</td>
+    </tr><tr class="company-row" data-search="CHOLAFIN Cholamandalam Investment &amp; Finance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CHOLAFIN/consolidated/" target="_blank" rel="noopener">CHOLAFIN</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Cholamandalam Investment &amp; Finance Company Ltd</div></td>
+      <td class="num">₹1,588.00</td>
       <td class="num">₹135,669 cr</td>
       <td class="num weak">9.71%</td>
       <td class="num ok">19.4%</td>
@@ -245,24 +230,26 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">23.6</td>
+      <td class="num score">84.1</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="housing-finance" data-kind="financial" data-industry="Housing Finance">
       <div class="ind-head">
         <h3>Housing Finance <span class="kind financial">financial</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROA, spread, GNPA/NNPA, CAR, AUM growth (not scraped)</p>
       <p class="note">Ranked on ROE + profit growth.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">APTUS</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="APTUS Aptus Value Housing Finance India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/APTUS/consolidated/" target="_blank" rel="noopener">APTUS</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Aptus Value Housing Finance India Ltd</div></td>
+      <td class="num">₹222.00</td>
       <td class="num">₹11,141 cr</td>
       <td class="num ok">15.4%</td>
       <td class="num ok">20.1%</td>
@@ -271,9 +258,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">11.3</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">AAVAS</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">87.2</td>
+    </tr><tr class="company-row" data-search="AAVAS AAVAS Financiers Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/AAVAS/consolidated/" target="_blank" rel="noopener">AAVAS</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">AAVAS Financiers Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹1,206.00</td>
       <td class="num">₹9,563 cr</td>
       <td class="num weak">9.91%</td>
       <td class="num weak">13.9%</td>
@@ -282,9 +271,11 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">19.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">LICHSGFIN</span><span class="badge flag" title="ROE&lt;15, sales5y&lt;10">flagged</span>
+      <td class="num score">66.8</td>
+    </tr><tr class="company-row" data-search="LICHSGFIN LIC Housing Finance Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/LICHSGFIN/consolidated/" target="_blank" rel="noopener">LICHSGFIN</a><span class="badge flag" title="ROE&lt;15, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">LIC Housing Finance Ltd</div><div class="fails">misses: ROE&lt;15, sales5y&lt;10</div></td>
+      <td class="num">₹534.00</td>
       <td class="num">₹29,384 cr</td>
       <td class="num weak">8.59%</td>
       <td class="num weak">14.4%</td>
@@ -293,24 +284,26 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">5.18</td>
+      <td class="num score">44.6</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="life-insurance" data-kind="financial" data-industry="Life Insurance">
       <div class="ind-head">
         <h3>Life Insurance <span class="kind financial">financial</span></h3>
-        <span class="cov">5/5 screened</span>
+        <span class="cov">5/5 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> VNB margin, APE growth, persistency, RoEV (not scraped)</p>
       <p class="note">Screener metrics are weak proxies for insurers — treat ranking as indicative only.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">LICI</span><span class="badge flag" title="sales5y&lt;10">flagged</span>
+        <tbody><tr class="company-row" data-search="LICI Life Insurance Corporation of India" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/LICI/consolidated/" target="_blank" rel="noopener">LICI</a><span class="badge flag" title="sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Life Insurance Corporation of India</div><div class="fails">misses: sales5y&lt;10</div></td>
+      <td class="num">₹396.00</td>
       <td class="num">₹501,572 cr</td>
       <td class="num ok">35.1%</td>
       <td class="num ok">37.8%</td>
@@ -319,9 +312,11 @@
       <td class="num">4.7%</td>
       <td class="num ok">0</td>
       <td class="num">8.32</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">HDFCLIFE</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span>
+      <td class="num score">144.7</td>
+    </tr><tr class="company-row" data-search="HDFCLIFE HDFC Life Insurance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/HDFCLIFE/consolidated/" target="_blank" rel="noopener">HDFCLIFE</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">HDFC Life Insurance Company Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12, sales5y&lt;10</div></td>
+      <td class="num">₹554.00</td>
       <td class="num">₹120,437 cr</td>
       <td class="num weak">10.3%</td>
       <td class="num weak">11.3%</td>
@@ -330,9 +325,11 @@
       <td class="num">1.2%</td>
       <td class="num ok">0.17</td>
       <td class="num">61</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ICICIPRULI</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span>
+      <td class="num score">31</td>
+    </tr><tr class="company-row" data-search="ICICIPRULI ICICI Prudential Life Insurance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ICICIPRULI/consolidated/" target="_blank" rel="noopener">ICICIPRULI</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">ICICI Prudential Life Insurance Company Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12, sales5y&lt;10</div></td>
+      <td class="num">₹451.00</td>
       <td class="num">₹65,429 cr</td>
       <td class="num weak">10.1%</td>
       <td class="num weak">12.6%</td>
@@ -341,24 +338,26 @@
       <td class="num">2.1%</td>
       <td class="num ok">0.19</td>
       <td class="num">40.7</td>
+      <td class="num score">24.9</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="general-%26-health-insurance" data-kind="financial" data-industry="General &amp; Health Insurance">
       <div class="ind-head">
         <h3>General &amp; Health Insurance <span class="kind financial">financial</span></h3>
-        <span class="cov">5/5 screened</span>
+        <span class="cov">5/5 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Combined ratio &lt;100%, solvency, loss ratio, GWP growth (not scraped)</p>
       <p class="note">Screener metrics are weak proxies for insurers — indicative only.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">NIACL</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span>
+        <tbody><tr class="company-row" data-search="NIACL New India Assurance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NIACL/consolidated/" target="_blank" rel="noopener">NIACL</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">New India Assurance Company Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12, sales5y&lt;10</div></td>
+      <td class="num">₹183.00</td>
       <td class="num">₹30,208 cr</td>
       <td class="num weak">4.29%</td>
       <td class="num weak">4.92%</td>
@@ -367,8 +366,9 @@
       <td class="num">-0.1%</td>
       <td class="num ok">0</td>
       <td class="num">39.3</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ICICIGI</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span>
+      <td class="num score">13.4</td>
+    </tr><tr class="company-row" data-search="ICICIGI ICICI Lombard General Insurance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ICICIGI/consolidated/" target="_blank" rel="noopener">ICICIGI</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">ICICI Lombard General Insurance Company Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12, sales5y&lt;10</div></td>
       <td class="num">—</td>
       <td class="num">—</td>
@@ -378,8 +378,10 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">—</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">STARHEALTH</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span>
+      <td class="num">—</td>
+      <td class="num score">0</td>
+    </tr><tr class="company-row" data-search="STARHEALTH Star Health &amp; Allied Insurance Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/STARHEALTH/consolidated/" target="_blank" rel="noopener">STARHEALTH</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Star Health &amp; Allied Insurance Company Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12, sales5y&lt;10</div></td>
       <td class="num">—</td>
       <td class="num">—</td>
@@ -389,24 +391,27 @@
       <td class="num">—</td>
       <td class="num">—</td>
       <td class="num">—</td>
+      <td class="num">—</td>
+      <td class="num score">0</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="capital-markets-%26-amcs" data-kind="general" data-industry="Capital Markets &amp; AMCs">
       <div class="ind-head">
         <h3>Capital Markets &amp; AMCs <span class="kind general">general</span></h3>
-        <span class="cov">9/9 screened</span>
+        <span class="cov">9/9 screened · 3 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROE &gt;25%, debt-free, AUM/volume growth, operating margin</p>
       <p class="note">Asset-light — the general quality filter works well here.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">MCX</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="MCX Multi Commodity Exchange of India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/MCX/consolidated/" target="_blank" rel="noopener">MCX</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Multi Commodity Exchange of India Ltd</div></td>
+      <td class="num">₹3,206.00</td>
       <td class="num">₹81,750 cr</td>
       <td class="num ok">71.4%</td>
       <td class="num ok">56.3%</td>
@@ -415,9 +420,11 @@
       <td class="num">72%</td>
       <td class="num ok">0</td>
       <td class="num">53</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BSE</span><span class="badge pass">PASS</span>
+      <td class="num score">173.7</td>
+    </tr><tr class="company-row" data-search="BSE BSE Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BSE/consolidated/" target="_blank" rel="noopener">BSE</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">BSE Ltd</div></td>
+      <td class="num">₹3,353.00</td>
       <td class="num">₹136,755 cr</td>
       <td class="num ok">60%</td>
       <td class="num ok">46%</td>
@@ -426,9 +433,11 @@
       <td class="num">64%</td>
       <td class="num ok">0</td>
       <td class="num">48.3</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">CAMS</span><span class="badge pass">PASS</span>
+      <td class="num score">166.5</td>
+    </tr><tr class="company-row" data-search="CAMS Computer Age Management Services Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CAMS/consolidated/" target="_blank" rel="noopener">CAMS</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Computer Age Management Services Ltd</div></td>
+      <td class="num">₹705.00</td>
       <td class="num">₹17,512 cr</td>
       <td class="num ok">47%</td>
       <td class="num ok">36.3%</td>
@@ -437,24 +446,26 @@
       <td class="num">46%</td>
       <td class="num ok">0.05</td>
       <td class="num">35.4</td>
+      <td class="num score">102.3</td>
     </tr></tbody>
       </table></div>
-    </section></div><div class="group"><h2>Tech &amp; Consumer</h2><section class="ind">
+    </section></div><div class="group"><h2>Tech &amp; Consumer</h2><section class="ind" id="it-%2F-software-services" data-kind="general" data-industry="IT / Software Services">
       <div class="ind-head">
         <h3>IT / Software Services <span class="kind general">general</span></h3>
-        <span class="cov">8/9 screened</span>
+        <span class="cov">8/9 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Constant-currency growth, EBIT margin &gt;20%, attrition, deal TCV, FCF conversion</p>
       <p class="note">Mega-caps often miss the 12% profit-CAGR bar; mid-caps score on growth.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">TCS</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+        <tbody><tr class="company-row" data-search="TCS Tata Consultancy Services Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TCS/consolidated/" target="_blank" rel="noopener">TCS</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Tata Consultancy Services Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹2,365.00</td>
       <td class="num">₹855,678 cr</td>
       <td class="num ok">63%</td>
       <td class="num ok">51.8%</td>
@@ -463,9 +474,11 @@
       <td class="num">26%</td>
       <td class="num ok">0.1</td>
       <td class="num">15.7</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">PERSISTENT</span><span class="badge pass">PASS</span>
+      <td class="num score">124.3</td>
+    </tr><tr class="company-row" data-search="PERSISTENT Persistent Systems Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/PERSISTENT/consolidated/" target="_blank" rel="noopener">PERSISTENT</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Persistent Systems Ltd</div></td>
+      <td class="num">₹5,877.00</td>
       <td class="num">₹92,704 cr</td>
       <td class="num ok">34.4%</td>
       <td class="num ok">27.2%</td>
@@ -474,9 +487,11 @@
       <td class="num">18%</td>
       <td class="num ok">0.06</td>
       <td class="num">46.6</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">INFY</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">94.1</td>
+    </tr><tr class="company-row" data-search="INFY Infosys Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/INFY/consolidated/" target="_blank" rel="noopener">INFY</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Infosys Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹1,112.00</td>
       <td class="num">₹451,138 cr</td>
       <td class="num ok">40%</td>
       <td class="num ok">31.9%</td>
@@ -485,24 +500,26 @@
       <td class="num">24%</td>
       <td class="num ok">0.1</td>
       <td class="num">14.4</td>
+      <td class="num score">82.4</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="fmcg" data-kind="general" data-industry="FMCG">
       <div class="ind-head">
         <h3>FMCG <span class="kind general">general</span></h3>
-        <span class="cov">9/9 screened</span>
+        <span class="cov">9/9 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Volume growth, OPM &gt;18%, ROCE &gt;25%, cash conversion</p>
       <p class="note">Sector-wide growth is soft; several elite-return names miss the growth filter.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">COLPAL</span><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span>
+        <tbody><tr class="company-row" data-search="COLPAL Colgate-Palmolive (India) Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/COLPAL/consolidated/" target="_blank" rel="noopener">COLPAL</a><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Colgate-Palmolive (India) Ltd</div><div class="fails">misses: sales5y&lt;10, profit5y&lt;12</div></td>
+      <td class="num">₹1,784.00</td>
       <td class="num">₹48,509 cr</td>
       <td class="num ok">179%</td>
       <td class="num ok">158%</td>
@@ -511,9 +528,11 @@
       <td class="num">22%</td>
       <td class="num ok">0.02</td>
       <td class="num">112</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">NESTLEIND</span><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span>
+      <td class="num score">337</td>
+    </tr><tr class="company-row" data-search="NESTLEIND Nestle India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NESTLEIND/consolidated/" target="_blank" rel="noopener">NESTLEIND</a><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Nestle India Ltd</div><div class="fails">misses: sales5y&lt;10, profit5y&lt;12</div></td>
+      <td class="num">₹1,322.00</td>
       <td class="num">₹254,836 cr</td>
       <td class="num ok">85.3%</td>
       <td class="num ok">74.2%</td>
@@ -522,9 +541,11 @@
       <td class="num">23%</td>
       <td class="num ok">0.09</td>
       <td class="num">68.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BRITANNIA</span><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span>
+      <td class="num score">159.5</td>
+    </tr><tr class="company-row" data-search="BRITANNIA Britannia Industries Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BRITANNIA/consolidated/" target="_blank" rel="noopener">BRITANNIA</a><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Britannia Industries Ltd</div><div class="fails">misses: sales5y&lt;10, profit5y&lt;12</div></td>
+      <td class="num">₹4,850.00</td>
       <td class="num">₹116,815 cr</td>
       <td class="num ok">56%</td>
       <td class="num ok">53.5%</td>
@@ -533,24 +554,26 @@
       <td class="num">18%</td>
       <td class="num ok">0.27</td>
       <td class="num">44.9</td>
+      <td class="num score">116.5</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="pharma" data-kind="general" data-industry="Pharma">
       <div class="ind-head">
         <h3>Pharma <span class="kind general">general</span></h3>
-        <span class="cov">9/9 screened</span>
+        <span class="cov">9/9 screened · 2 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> OPM &gt;18%, D/E &lt;0.5, USFDA status, R&amp;D pipeline</p>
       <p class="note">Check USFDA inspection status separately — not on screener.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">LUPIN</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="LUPIN Lupin Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/LUPIN/consolidated/" target="_blank" rel="noopener">LUPIN</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Lupin Ltd</div></td>
+      <td class="num">₹1,983.00</td>
       <td class="num">₹90,662 cr</td>
       <td class="num ok">29.9%</td>
       <td class="num ok">28.7%</td>
@@ -559,9 +582,11 @@
       <td class="num">32%</td>
       <td class="num ok">0.29</td>
       <td class="num">15.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">AJANTPHARM</span><span class="badge pass">PASS</span>
+      <td class="num score">83.6</td>
+    </tr><tr class="company-row" data-search="AJANTPHARM Ajanta Pharma Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/AJANTPHARM/consolidated/" target="_blank" rel="noopener">AJANTPHARM</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Ajanta Pharma Ltd</div></td>
+      <td class="num">₹3,368.00</td>
       <td class="num">₹42,091 cr</td>
       <td class="num ok">34.5%</td>
       <td class="num ok">27.1%</td>
@@ -570,9 +595,11 @@
       <td class="num">25%</td>
       <td class="num ok">0.06</td>
       <td class="num">37.1</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TORNTPHARM</span><span class="badge flag" title="D/E&gt;1">flagged</span>
+      <td class="num score">74.6</td>
+    </tr><tr class="company-row" data-search="TORNTPHARM Torrent Pharmaceuticals Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TORNTPHARM/consolidated/" target="_blank" rel="noopener">TORNTPHARM</a><span class="badge flag" title="D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Torrent Pharmaceuticals Ltd</div><div class="fails">misses: D/E&gt;1</div></td>
+      <td class="num">₹4,644.00</td>
       <td class="num">₹176,654 cr</td>
       <td class="num ok">15.2%</td>
       <td class="num ok">27.4%</td>
@@ -581,24 +608,26 @@
       <td class="num">33%</td>
       <td class="num weak">1.79</td>
       <td class="num">79.2</td>
+      <td class="num score">54.6</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="hospitals-%26-diagnostics" data-kind="general" data-industry="Hospitals &amp; Diagnostics">
       <div class="ind-head">
         <h3>Hospitals &amp; Diagnostics <span class="kind general">general</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ARPOB, occupancy, bed additions (hospitals); ROCE, network (diagnostics)</p>
       <p class="note">Expansion capex can depress trailing ROCE for the fastest growers.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">NH</span><span class="badge flag" title="D/E&gt;1">flagged</span>
+        <tbody><tr class="company-row" data-search="NH Narayana Hrudayalaya Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NH/consolidated/" target="_blank" rel="noopener">NH</a><span class="badge flag" title="D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Narayana Hrudayalaya Ltd</div><div class="fails">misses: D/E&gt;1</div></td>
+      <td class="num">₹1,724.00</td>
       <td class="num">₹35,231 cr</td>
       <td class="num ok">15.5%</td>
       <td class="num ok">20.5%</td>
@@ -607,9 +636,11 @@
       <td class="num">19%</td>
       <td class="num weak">1.29</td>
       <td class="num">40.9</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">APOLLOHOSP</span><span class="badge pass">PASS</span>
+      <td class="num score">126</td>
+    </tr><tr class="company-row" data-search="APOLLOHOSP Apollo Hospitals Enterprise Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/APOLLOHOSP/consolidated/" target="_blank" rel="noopener">APOLLOHOSP</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Apollo Hospitals Enterprise Ltd</div></td>
+      <td class="num">₹7,932.00</td>
       <td class="num">₹114,050 cr</td>
       <td class="num ok">17.4%</td>
       <td class="num ok">21.2%</td>
@@ -618,9 +649,11 @@
       <td class="num">15%</td>
       <td class="num ok">0.9</td>
       <td class="num">54.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">MAXHEALTH</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+      <td class="num score">86.1</td>
+    </tr><tr class="company-row" data-search="MAXHEALTH Max Healthcare Institute Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/MAXHEALTH/consolidated/" target="_blank" rel="noopener">MAXHEALTH</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Max Healthcare Institute Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹864.00</td>
       <td class="num">₹84,123 cr</td>
       <td class="num weak">14.7%</td>
       <td class="num weak">14.7%</td>
@@ -629,24 +662,26 @@
       <td class="num">27%</td>
       <td class="num ok">0.32</td>
       <td class="num">56.1</td>
+      <td class="num score">72.9</td>
     </tr></tbody>
       </table></div>
-    </section></div><div class="group"><h2>Auto, Metals &amp; Cement</h2><section class="ind">
+    </section></div><div class="group"><h2>Auto, Metals &amp; Cement</h2><section class="ind" id="auto-oems" data-kind="general" data-industry="Auto OEMs">
       <div class="ind-head">
         <h3>Auto OEMs <span class="kind general">general</span></h3>
-        <span class="cov">7/8 screened</span>
+        <span class="cov">7/8 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Volume growth, market-share trend, EBITDA margin, EV readiness</p>
       <p class="note">Captive-finance arms distort consolidated ROCE/D-E for some OEMs.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">ASHOKLEY</span><span class="badge flag" title="ROCE&lt;15, D/E&gt;1">flagged</span>
+        <tbody><tr class="company-row" data-search="ASHOKLEY Ashok Leyland Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ASHOKLEY/consolidated/" target="_blank" rel="noopener">ASHOKLEY</a><span class="badge flag" title="ROCE&lt;15, D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Ashok Leyland Ltd</div><div class="fails">misses: ROCE&lt;15, D/E&gt;1</div></td>
+      <td class="num">₹149.00</td>
       <td class="num">₹87,697 cr</td>
       <td class="num weak">13.6%</td>
       <td class="num ok">27.4%</td>
@@ -655,9 +690,11 @@
       <td class="num">19%</td>
       <td class="num weak">4.49</td>
       <td class="num">23.6</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">EICHERMOT</span><span class="badge pass">PASS</span>
+      <td class="num score">95</td>
+    </tr><tr class="company-row" data-search="EICHERMOT Eicher Motors Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/EICHERMOT/consolidated/" target="_blank" rel="noopener">EICHERMOT</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Eicher Motors Ltd</div></td>
+      <td class="num">₹7,259.00</td>
       <td class="num">₹199,275 cr</td>
       <td class="num ok">30.5%</td>
       <td class="num ok">24%</td>
@@ -666,9 +703,11 @@
       <td class="num">25%</td>
       <td class="num ok">0.02</td>
       <td class="num">34.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TVSMOTOR</span><span class="badge flag" title="D/E&gt;1">flagged</span>
+      <td class="num score">82</td>
+    </tr><tr class="company-row" data-search="TVSMOTOR TVS Motor Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TVSMOTOR/consolidated/" target="_blank" rel="noopener">TVSMOTOR</a><span class="badge flag" title="D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">TVS Motor Company Ltd</div><div class="fails">misses: D/E&gt;1</div></td>
+      <td class="num">₹4,060.00</td>
       <td class="num">₹192,902 cr</td>
       <td class="num ok">17.4%</td>
       <td class="num ok">33.6%</td>
@@ -677,24 +716,26 @@
       <td class="num">15%</td>
       <td class="num weak">3.43</td>
       <td class="num">55.7</td>
+      <td class="num score">82</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="auto-ancillaries" data-kind="general" data-industry="Auto Ancillaries">
       <div class="ind-head">
         <h3>Auto Ancillaries <span class="kind general">general</span></h3>
-        <span class="cov">8/8 screened</span>
+        <span class="cov">8/8 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Content per vehicle, client diversification, export %, ROCE</p>
       <p class="note">Export % not on screener — verify separately.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">UNOMINDA</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="UNOMINDA Uno Minda Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/UNOMINDA/consolidated/" target="_blank" rel="noopener">UNOMINDA</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Uno Minda Ltd</div></td>
+      <td class="num">₹1,110.00</td>
       <td class="num">₹64,110 cr</td>
       <td class="num ok">19.6%</td>
       <td class="num ok">19.3%</td>
@@ -703,9 +744,11 @@
       <td class="num">11%</td>
       <td class="num ok">0.4</td>
       <td class="num">52.4</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BOSCHLTD</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">72.9</td>
+    </tr><tr class="company-row" data-search="BOSCHLTD Bosch Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BOSCHLTD/consolidated/" target="_blank" rel="noopener">BOSCHLTD</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Bosch Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹44,845.00</td>
       <td class="num">₹132,276 cr</td>
       <td class="num ok">21.5%</td>
       <td class="num weak">14.6%</td>
@@ -714,9 +757,11 @@
       <td class="num">13%</td>
       <td class="num ok">0.01</td>
       <td class="num">56</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TIINDIA</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">52.6</td>
+    </tr><tr class="company-row" data-search="TIINDIA Tube Investments of India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TIINDIA/consolidated/" target="_blank" rel="noopener">TIINDIA</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Tube Investments of India Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹2,218.00</td>
       <td class="num">₹42,936 cr</td>
       <td class="num ok">17.1%</td>
       <td class="num weak">9.95%</td>
@@ -725,24 +770,26 @@
       <td class="num">10%</td>
       <td class="num ok">0.1</td>
       <td class="num">68.5</td>
+      <td class="num score">50.5</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="metals-%26-mining" data-kind="cyclical" data-industry="Metals &amp; Mining">
       <div class="ind-head">
         <h3>Metals &amp; Mining <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">9/9 screened</span>
+        <span class="cov">9/9 screened · 2 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> EV/EBITDA, cost-per-tonne, net-debt/EBITDA &lt;3, capacity utilisation</p>
       <p class="note">Cyclical — trailing returns near cycle peak; ranked on relative strength + balance sheet.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">HINDZINC</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="HINDZINC Hindustan Zinc Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/HINDZINC/consolidated/" target="_blank" rel="noopener">HINDZINC</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Hindustan Zinc Ltd</div></td>
+      <td class="num">₹530.00</td>
       <td class="num">₹223,879 cr</td>
       <td class="num ok">69.5%</td>
       <td class="num ok">76.6%</td>
@@ -751,9 +798,11 @@
       <td class="num">56%</td>
       <td class="num ok">0.39</td>
       <td class="num">13.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">JSL</span><span class="badge pass">PASS</span>
+      <td class="num score">158.6</td>
+    </tr><tr class="company-row" data-search="JSL Jindal Stainless Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/JSL/consolidated/" target="_blank" rel="noopener">JSL</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Jindal Stainless Ltd</div></td>
+      <td class="num">₹723.00</td>
       <td class="num">₹59,589 cr</td>
       <td class="num ok">19.3%</td>
       <td class="num ok">17.7%</td>
@@ -762,9 +811,11 @@
       <td class="num">13%</td>
       <td class="num ok">0.38</td>
       <td class="num">18.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">NMDC</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">79</td>
+    </tr><tr class="company-row" data-search="NMDC NMDC Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NMDC/consolidated/" target="_blank" rel="noopener">NMDC</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">NMDC Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹70.90</td>
       <td class="num">₹62,360 cr</td>
       <td class="num ok">27.6%</td>
       <td class="num ok">23.4%</td>
@@ -773,24 +824,26 @@
       <td class="num">29%</td>
       <td class="num ok">0.19</td>
       <td class="num">8.34</td>
+      <td class="num score">61</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="cement" data-kind="cyclical" data-industry="Cement">
       <div class="ind-head">
         <h3>Cement <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> EBITDA/tonne, capacity utilisation &gt;70%, realisations, regional strength</p>
       <p class="note">Cyclical — fresh off a pricing trough; few names pass the full filter.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">JKCEMENT</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+        <tbody><tr class="company-row" data-search="JKCEMENT J K Cements Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/JKCEMENT/consolidated/" target="_blank" rel="noopener">JKCEMENT</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">J K Cements Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹4,928.00</td>
       <td class="num">₹38,081 cr</td>
       <td class="num ok">15.1%</td>
       <td class="num ok">15.6%</td>
@@ -799,9 +852,11 @@
       <td class="num">16%</td>
       <td class="num ok">0.88</td>
       <td class="num">39</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ULTRACEMCO</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12">flagged</span>
+      <td class="num score">42.2</td>
+    </tr><tr class="company-row" data-search="ULTRACEMCO UltraTech Cement Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ULTRACEMCO/consolidated/" target="_blank" rel="noopener">ULTRACEMCO</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">UltraTech Cement Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15, profit5y&lt;12</div></td>
+      <td class="num">₹10,850.00</td>
       <td class="num">₹319,727 cr</td>
       <td class="num weak">12.7%</td>
       <td class="num weak">11.1%</td>
@@ -810,9 +865,11 @@
       <td class="num">19%</td>
       <td class="num ok">0.31</td>
       <td class="num">37</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ACC</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12">flagged</span>
+      <td class="num score">35.3</td>
+    </tr><tr class="company-row" data-search="ACC ACC Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ACC/consolidated/" target="_blank" rel="noopener">ACC</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">ACC Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15, profit5y&lt;12</div></td>
+      <td class="num">₹1,148.00</td>
       <td class="num">₹21,549 cr</td>
       <td class="num weak">11.2%</td>
       <td class="num weak">10.9%</td>
@@ -821,24 +878,26 @@
       <td class="num">10%</td>
       <td class="num ok">0.02</td>
       <td class="num">11.3</td>
+      <td class="num score">32.6</td>
     </tr></tbody>
       </table></div>
-    </section></div><div class="group"><h2>Industrials &amp; Energy</h2><section class="ind">
+    </section></div><div class="group"><h2>Industrials &amp; Energy</h2><section class="ind" id="capital-goods-%26-engineering" data-kind="general" data-industry="Capital Goods &amp; Engineering">
       <div class="ind-head">
         <h3>Capital Goods &amp; Engineering <span class="kind general">general</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 3 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Order book &amp; book-to-bill &gt;2.5x, order inflow, execution, working capital</p>
       <p class="note">Order book not on screener — verify from company disclosures.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">CUMMINSIND</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="CUMMINSIND Cummins India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CUMMINSIND/consolidated/" target="_blank" rel="noopener">CUMMINSIND</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Cummins India Ltd</div></td>
+      <td class="num">₹4,645.00</td>
       <td class="num">₹128,757 cr</td>
       <td class="num ok">39.5%</td>
       <td class="num ok">30.2%</td>
@@ -847,9 +906,11 @@
       <td class="num">20%</td>
       <td class="num ok">0</td>
       <td class="num">52.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TRITURBINE</span><span class="badge pass">PASS</span>
+      <td class="num score">96.7</td>
+    </tr><tr class="company-row" data-search="TRITURBINE Triveni Turbine Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TRITURBINE/consolidated/" target="_blank" rel="noopener">TRITURBINE</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Triveni Turbine Ltd</div></td>
+      <td class="num">₹509.00</td>
       <td class="num">₹16,170 cr</td>
       <td class="num ok">34.1%</td>
       <td class="num ok">25.2%</td>
@@ -858,9 +919,11 @@
       <td class="num">19%</td>
       <td class="num ok">0.02</td>
       <td class="num">46.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">SIEMENS</span><span class="badge pass">PASS</span>
+      <td class="num score">84.3</td>
+    </tr><tr class="company-row" data-search="SIEMENS Siemens Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/SIEMENS/consolidated/" target="_blank" rel="noopener">SIEMENS</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Siemens Ltd</div></td>
+      <td class="num">₹3,671.00</td>
       <td class="num">₹130,718 cr</td>
       <td class="num ok">21.4%</td>
       <td class="num ok">19.2%</td>
@@ -869,24 +932,26 @@
       <td class="num">11%</td>
       <td class="num ok">0.02</td>
       <td class="num">87</td>
+      <td class="num score">65.6</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="defence" data-kind="general" data-industry="Defence">
       <div class="ind-head">
         <h3>Defence <span class="kind general">general</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 3 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Order book &amp; book-to-bill, indigenisation %, order inflow</p>
       <p class="note">Multi-year order visibility not captured by screener ratios.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">SOLARINDS</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="SOLARINDS Solar Industries India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/SOLARINDS/consolidated/" target="_blank" rel="noopener">SOLARINDS</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Solar Industries India Ltd</div></td>
+      <td class="num">₹19,976.00</td>
       <td class="num">₹180,759 cr</td>
       <td class="num ok">38.1%</td>
       <td class="num ok">32.6%</td>
@@ -895,9 +960,11 @@
       <td class="num">27%</td>
       <td class="num ok">0.24</td>
       <td class="num">90.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">MAZDOCK</span><span class="badge pass">PASS</span>
+      <td class="num score">108.7</td>
+    </tr><tr class="company-row" data-search="MAZDOCK Mazagon Dock Shipbuilders Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/MAZDOCK/consolidated/" target="_blank" rel="noopener">MAZDOCK</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Mazagon Dock Shipbuilders Ltd</div></td>
+      <td class="num">₹2,115.00</td>
       <td class="num">₹85,317 cr</td>
       <td class="num ok">36%</td>
       <td class="num ok">29.2%</td>
@@ -906,9 +973,11 @@
       <td class="num">19%</td>
       <td class="num ok">0.05</td>
       <td class="num">29.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BEL</span><span class="badge pass">PASS</span>
+      <td class="num score">94.7</td>
+    </tr><tr class="company-row" data-search="BEL Bharat Electronics Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BEL/consolidated/" target="_blank" rel="noopener">BEL</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Bharat Electronics Ltd</div></td>
+      <td class="num">₹382.00</td>
       <td class="num">₹279,087 cr</td>
       <td class="num ok">36.4%</td>
       <td class="num ok">27.4%</td>
@@ -917,24 +986,26 @@
       <td class="num">29%</td>
       <td class="num ok">0</td>
       <td class="num">45.5</td>
+      <td class="num score">82.8</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="power-%26-utilities" data-kind="cyclical" data-industry="Power &amp; Utilities">
       <div class="ind-head">
         <h3>Power &amp; Utilities <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> PLF/capacity utilisation, regulated vs merchant, receivable days, RE pipeline</p>
       <p class="note">Regulated-return model structurally caps ROCE — most names fail the filter (not a defect).</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">ADANIPOWER</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="ADANIPOWER Adani Power Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ADANIPOWER/consolidated/" target="_blank" rel="noopener">ADANIPOWER</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Adani Power Ltd</div></td>
+      <td class="num">₹195.00</td>
       <td class="num">₹376,341 cr</td>
       <td class="num ok">17.2%</td>
       <td class="num ok">21.1%</td>
@@ -943,9 +1014,11 @@
       <td class="num">37%</td>
       <td class="num ok">0.84</td>
       <td class="num">26.4</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TORNTPOWER</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+      <td class="num score">75.3</td>
+    </tr><tr class="company-row" data-search="TORNTPOWER Torrent Power Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TORNTPOWER/consolidated/" target="_blank" rel="noopener">TORNTPOWER</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Torrent Power Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹1,234.00</td>
       <td class="num">₹62,164 cr</td>
       <td class="num weak">13.7%</td>
       <td class="num weak">12.5%</td>
@@ -954,9 +1027,11 @@
       <td class="num">19%</td>
       <td class="num ok">0.73</td>
       <td class="num">26.7</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TATAPOWER</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, D/E&gt;1">flagged</span>
+      <td class="num score">41.7</td>
+    </tr><tr class="company-row" data-search="TATAPOWER Tata Power Company Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TATAPOWER/consolidated/" target="_blank" rel="noopener">TATAPOWER</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Tata Power Company Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15, D/E&gt;1</div></td>
+      <td class="num">₹352.00</td>
       <td class="num">₹112,380 cr</td>
       <td class="num weak">10.5%</td>
       <td class="num weak">10.2%</td>
@@ -965,24 +1040,26 @@
       <td class="num">20%</td>
       <td class="num weak">1.93</td>
       <td class="num">28.6</td>
+      <td class="num score">41.2</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="oil-%26-gas-%2F-energy" data-kind="cyclical" data-industry="Oil &amp; Gas / Energy">
       <div class="ind-head">
         <h3>Oil &amp; Gas / Energy <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">10/10 screened</span>
+        <span class="cov">10/10 screened · 2 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> GRM (OMCs), crude leverage (upstream), volume growth &amp; margin/scm (CGD)</p>
       <p class="note">Commodity/regulated — upstream &amp; CGD often sit at 12-14% ROE.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">BPCL</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="BPCL Bharat Petroleum Corporation Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BPCL/consolidated/" target="_blank" rel="noopener">BPCL</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Bharat Petroleum Corporation Ltd</div></td>
+      <td class="num">₹293.00</td>
       <td class="num">₹127,248 cr</td>
       <td class="num ok">25.6%</td>
       <td class="num ok">28.8%</td>
@@ -991,9 +1068,11 @@
       <td class="num">5%</td>
       <td class="num ok">0.54</td>
       <td class="num">8.21</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">IOC</span><span class="badge pass">PASS</span>
+      <td class="num score">69.9</td>
+    </tr><tr class="company-row" data-search="IOC Indian Oil Corporation Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/IOC/consolidated/" target="_blank" rel="noopener">IOC</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Indian Oil Corporation Ltd</div></td>
+      <td class="num">₹129.00</td>
       <td class="num">₹181,740 cr</td>
       <td class="num ok">18.7%</td>
       <td class="num ok">20.5%</td>
@@ -1002,9 +1081,11 @@
       <td class="num">8%</td>
       <td class="num ok">0.6</td>
       <td class="num">5.42</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">PETRONET</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">54.7</td>
+    </tr><tr class="company-row" data-search="PETRONET Petronet LNG Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/PETRONET/consolidated/" target="_blank" rel="noopener">PETRONET</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Petronet LNG Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹295.00</td>
       <td class="num">₹44,190 cr</td>
       <td class="num ok">22.6%</td>
       <td class="num ok">18.3%</td>
@@ -1013,24 +1094,26 @@
       <td class="num">15%</td>
       <td class="num ok">0.11</td>
       <td class="num">10.5</td>
+      <td class="num score">49.4</td>
     </tr></tbody>
       </table></div>
-    </section></div><div class="group"><h2>Other Sectors</h2><section class="ind">
+    </section></div><div class="group"><h2>Other Sectors</h2><section class="ind" id="building-materials" data-kind="general" data-industry="Building Materials">
       <div class="ind-head">
         <h3>Building Materials <span class="kind general">general</span></h3>
-        <span class="cov">8/8 screened</span>
+        <span class="cov">8/8 screened · 2 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Brand strength, OPM, ROCE &gt;18%, distribution, volume growth</p>
       <p class="note">Construction soft patch has softened trailing ratios for some names.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">APLAPOLLO</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="APLAPOLLO APL Apollo Tubes Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/APLAPOLLO/consolidated/" target="_blank" rel="noopener">APLAPOLLO</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">APL Apollo Tubes Ltd</div></td>
+      <td class="num">₹2,158.00</td>
       <td class="num">₹59,927 cr</td>
       <td class="num ok">31.8%</td>
       <td class="num ok">25.4%</td>
@@ -1039,9 +1122,11 @@
       <td class="num">8%</td>
       <td class="num ok">0.09</td>
       <td class="num">48.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">PIDILITIND</span><span class="badge pass">PASS</span>
+      <td class="num score">81.7</td>
+    </tr><tr class="company-row" data-search="PIDILITIND Pidilite Industries Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/PIDILITIND/consolidated/" target="_blank" rel="noopener">PIDILITIND</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Pidilite Industries Ltd</div></td>
+      <td class="num">₹1,505.00</td>
       <td class="num">₹153,270 cr</td>
       <td class="num ok">31%</td>
       <td class="num ok">23.9%</td>
@@ -1050,9 +1135,11 @@
       <td class="num">24%</td>
       <td class="num ok">0.04</td>
       <td class="num">57.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ASIANPAINT</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">70.9</td>
+    </tr><tr class="company-row" data-search="ASIANPAINT Asian Paints Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ASIANPAINT/consolidated/" target="_blank" rel="noopener">ASIANPAINT</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Asian Paints Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹2,390.00</td>
       <td class="num">₹229,215 cr</td>
       <td class="num ok">26.3%</td>
       <td class="num ok">21.8%</td>
@@ -1061,24 +1148,26 @@
       <td class="num">19%</td>
       <td class="num ok">0.18</td>
       <td class="num">47</td>
+      <td class="num score">56.6</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="telecom" data-kind="general" data-industry="Telecom">
       <div class="ind-head">
         <h3>Telecom <span class="kind general">general</span></h3>
-        <span class="cov">5/5 screened</span>
+        <span class="cov">5/5 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ARPU &amp; trend, subscriber/market share, net debt, EBITDA margin</p>
       <p class="note">Carriers carry heavy absolute debt; tower/infra layer scores cleanest.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">BHARTIARTL</span><span class="badge flag" title="D/E&gt;1">flagged</span>
+        <tbody><tr class="company-row" data-search="BHARTIARTL Bharti Airtel Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BHARTIARTL/consolidated/" target="_blank" rel="noopener">BHARTIARTL</a><span class="badge flag" title="D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Bharti Airtel Ltd</div><div class="fails">misses: D/E&gt;1</div></td>
+      <td class="num">₹1,865.00</td>
       <td class="num">₹1,164,155 cr</td>
       <td class="num ok">17.6%</td>
       <td class="num ok">20.3%</td>
@@ -1087,9 +1176,11 @@
       <td class="num">57%</td>
       <td class="num weak">1.31</td>
       <td class="num">37.3</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">INDUSTOWER</span><span class="badge pass">PASS</span>
+      <td class="num score">56.9</td>
+    </tr><tr class="company-row" data-search="INDUSTOWER Indus Towers Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/INDUSTOWER/consolidated/" target="_blank" rel="noopener">INDUSTOWER</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Indus Towers Ltd</div></td>
+      <td class="num">₹385.00</td>
       <td class="num">₹101,569 cr</td>
       <td class="num ok">19.5%</td>
       <td class="num ok">18.6%</td>
@@ -1098,9 +1189,11 @@
       <td class="num">55%</td>
       <td class="num ok">0.53</td>
       <td class="num">14.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TATACOMM</span><span class="badge flag" title="ROCE&lt;15, sales5y&lt;10, profit5y&lt;12, D/E&gt;1">flagged</span>
+      <td class="num score">53.6</td>
+    </tr><tr class="company-row" data-search="TATACOMM Tata Communications Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TATACOMM/consolidated/" target="_blank" rel="noopener">TATACOMM</a><span class="badge flag" title="ROCE&lt;15, sales5y&lt;10, profit5y&lt;12, D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Tata Communications Ltd</div><div class="fails">misses: ROCE&lt;15, sales5y&lt;10, profit5y&lt;12, D/E&gt;1</div></td>
+      <td class="num">₹1,664.00</td>
       <td class="num">₹47,438 cr</td>
       <td class="num weak">14.6%</td>
       <td class="num ok">32.6%</td>
@@ -1109,24 +1202,26 @@
       <td class="num">19%</td>
       <td class="num weak">3.55</td>
       <td class="num">45.6</td>
+      <td class="num score">49.2</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="media-%26-entertainment" data-kind="general" data-industry="Media &amp; Entertainment">
       <div class="ind-head">
         <h3>Media &amp; Entertainment <span class="kind general">general</span></h3>
-        <span class="cov">6/6 screened</span>
+        <span class="cov">6/6 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> FCF, balance sheet, content/IP ownership (be selective)</p>
       <p class="note">Most of the sector destroys capital; winners are debt-free IP owners.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">NAZARA</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="NAZARA Nazara Technologies Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NAZARA/consolidated/" target="_blank" rel="noopener">NAZARA</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Nazara Technologies Ltd</div></td>
+      <td class="num">₹406.00</td>
       <td class="num">₹16,572 cr</td>
       <td class="num ok">27.1%</td>
       <td class="num ok">30.6%</td>
@@ -1135,9 +1230,11 @@
       <td class="num">-5%</td>
       <td class="num ok">0.06</td>
       <td class="num">—</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">PVRINOX</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+      <td class="num score">151.2</td>
+    </tr><tr class="company-row" data-search="PVRINOX PVR Inox Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/PVRINOX/consolidated/" target="_blank" rel="noopener">PVRINOX</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">PVR Inox Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹1,372.00</td>
       <td class="num">₹13,472 cr</td>
       <td class="num weak">6.79%</td>
       <td class="num weak">4.92%</td>
@@ -1146,9 +1243,11 @@
       <td class="num">32%</td>
       <td class="num ok">0.92</td>
       <td class="num">42.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">SAREGAMA</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">65.7</td>
+    </tr><tr class="company-row" data-search="SAREGAMA Saregama India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/SAREGAMA/consolidated/" target="_blank" rel="noopener">SAREGAMA</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Saregama India Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹499.00</td>
       <td class="num">₹9,617 cr</td>
       <td class="num ok">17.3%</td>
       <td class="num weak">12.7%</td>
@@ -1157,24 +1256,26 @@
       <td class="num">36%</td>
       <td class="num ok">0.04</td>
       <td class="num">42.2</td>
+      <td class="num score">45</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="logistics-%26-ports" data-kind="general" data-industry="Logistics &amp; Ports">
       <div class="ind-head">
         <h3>Logistics &amp; Ports <span class="kind general">general</span></h3>
-        <span class="cov">6/7 screened</span>
+        <span class="cov">6/7 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Throughput growth, asset turns, EBITDA/unit, network density</p>
       <p class="note">Ports are high-margin; surface transport is asset-turn driven.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">JSWINFRA</span><span class="badge flag" title="ROCE&lt;15">flagged</span>
+        <tbody><tr class="company-row" data-search="JSWINFRA JSW Infrastructure Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/JSWINFRA/consolidated/" target="_blank" rel="noopener">JSWINFRA</a><span class="badge flag" title="ROCE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">JSW Infrastructure Ltd</div><div class="fails">misses: ROCE&lt;15</div></td>
+      <td class="num">₹335.00</td>
       <td class="num">₹78,020 cr</td>
       <td class="num weak">13.6%</td>
       <td class="num ok">15.3%</td>
@@ -1183,9 +1284,11 @@
       <td class="num">48%</td>
       <td class="num ok">0.63</td>
       <td class="num">50.4</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">TCI</span><span class="badge pass">PASS</span>
+      <td class="num score">62.4</td>
+    </tr><tr class="company-row" data-search="TCI Transport Corporation of India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/TCI/consolidated/" target="_blank" rel="noopener">TCI</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Transport Corporation of India Ltd</div></td>
+      <td class="num">₹863.00</td>
       <td class="num">₹6,632 cr</td>
       <td class="num ok">19.4%</td>
       <td class="num ok">19.2%</td>
@@ -1194,9 +1297,11 @@
       <td class="num">11%</td>
       <td class="num ok">0.12</td>
       <td class="num">14.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">ADANIPORTS</span><span class="badge flag" title="ROCE&lt;15">flagged</span>
+      <td class="num score">56.6</td>
+    </tr><tr class="company-row" data-search="ADANIPORTS Adani Ports &amp; Special Economic Zone Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/ADANIPORTS/consolidated/" target="_blank" rel="noopener">ADANIPORTS</a><span class="badge flag" title="ROCE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Adani Ports &amp; Special Economic Zone Ltd</div><div class="fails">misses: ROCE&lt;15</div></td>
+      <td class="num">₹1,752.00</td>
       <td class="num">₹403,654 cr</td>
       <td class="num weak">14.1%</td>
       <td class="num ok">16.4%</td>
@@ -1205,24 +1310,26 @@
       <td class="num">58%</td>
       <td class="num ok">0.66</td>
       <td class="num">30.4</td>
+      <td class="num score">53.5</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="hotels-%26-tourism" data-kind="cyclical" data-industry="Hotels &amp; Tourism">
       <div class="ind-head">
         <h3>Hotels &amp; Tourism <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">5/5 screened</span>
+        <span class="cov">5/5 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> RevPAR, occupancy, ARR, room additions</p>
       <p class="note">Mid/late upcycle; asset-heavy base depresses ROE — prefer low-debt owners.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">CHALET</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="CHALET Chalet Hotels Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CHALET/consolidated/" target="_blank" rel="noopener">CHALET</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Chalet Hotels Ltd</div></td>
+      <td class="num">₹826.00</td>
       <td class="num">₹18,099 cr</td>
       <td class="num ok">17%</td>
       <td class="num ok">19%</td>
@@ -1231,9 +1338,11 @@
       <td class="num">45%</td>
       <td class="num ok">0.64</td>
       <td class="num">33.8</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">EIHOTEL</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">88</td>
+    </tr><tr class="company-row" data-search="EIHOTEL EIH Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/EIHOTEL/consolidated/" target="_blank" rel="noopener">EIHOTEL</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">EIH Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹302.00</td>
       <td class="num">₹18,917 cr</td>
       <td class="num ok">20.7%</td>
       <td class="num weak">14.5%</td>
@@ -1242,9 +1351,11 @@
       <td class="num">34%</td>
       <td class="num ok">0.05</td>
       <td class="num">26.1</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">LEMONTREE</span><span class="badge flag" title="ROCE&lt;15, D/E&gt;1">flagged</span>
+      <td class="num score">72.7</td>
+    </tr><tr class="company-row" data-search="LEMONTREE Lemon Tree Hotels Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/LEMONTREE/consolidated/" target="_blank" rel="noopener">LEMONTREE</a><span class="badge flag" title="ROCE&lt;15, D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Lemon Tree Hotels Ltd</div><div class="fails">misses: ROCE&lt;15, D/E&gt;1</div></td>
+      <td class="num">₹114.00</td>
       <td class="num">₹9,055 cr</td>
       <td class="num weak">14.1%</td>
       <td class="num ok">19.2%</td>
@@ -1253,24 +1364,26 @@
       <td class="num">47%</td>
       <td class="num weak">1.44</td>
       <td class="num">35.4</td>
+      <td class="num score">69.8</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="aviation" data-kind="cyclical" data-industry="Aviation">
       <div class="ind-head">
         <h3>Aviation <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">2/2 screened</span>
+        <span class="cov">2/2 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Load factor, RASK/CASK spread, fleet, balance sheet (usually weak)</p>
       <p class="note">Only one structurally profitable listed carrier — be honest about thin depth.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">SPICEJET</span><span class="badge flag" title="ROE&lt;15, sales5y&lt;10">flagged</span>
+        <tbody><tr class="company-row" data-search="SPICEJET SpiceJet Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/SPICEJET/consolidated/" target="_blank" rel="noopener">SPICEJET</a><span class="badge flag" title="ROE&lt;15, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">SpiceJet Ltd</div><div class="fails">misses: ROE&lt;15, sales5y&lt;10</div></td>
+      <td class="num">₹8.63</td>
       <td class="num">₹1,317 cr</td>
       <td class="num ok">29.4%</td>
       <td class="num">—</td>
@@ -1279,9 +1392,11 @@
       <td class="num">-13%</td>
       <td class="num">—</td>
       <td class="num">—</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">INDIGO</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12, D/E&gt;1">flagged</span>
+      <td class="num score">29.4</td>
+    </tr><tr class="company-row" data-search="INDIGO Interglobe Aviation Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/INDIGO/consolidated/" target="_blank" rel="noopener">INDIGO</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15, profit5y&lt;12, D/E&gt;1">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Interglobe Aviation Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15, profit5y&lt;12, D/E&gt;1</div></td>
+      <td class="num">₹4,799.00</td>
       <td class="num">₹185,559 cr</td>
       <td class="num weak">5.24%</td>
       <td class="num weak">-27.1%</td>
@@ -1290,24 +1405,26 @@
       <td class="num">11%</td>
       <td class="num weak">11.15</td>
       <td class="num">—</td>
+      <td class="num score">4.1</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="textiles" data-kind="cyclical" data-industry="Textiles">
       <div class="ind-head">
         <h3>Textiles <span class="kind cyclical">cyclical</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Cost position, capacity utilisation, debt, export/value-add mix</p>
       <p class="note">Favour low-cost, high-value-add, debt-light exporters over commodity spinners.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">RAYMOND</span><span class="badge flag" title="ROCE&lt;15, sales5y&lt;10">flagged</span>
+        <tbody><tr class="company-row" data-search="RAYMOND Raymond Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/RAYMOND/consolidated/" target="_blank" rel="noopener">RAYMOND</a><span class="badge flag" title="ROCE&lt;15, sales5y&lt;10">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Raymond Ltd</div><div class="fails">misses: ROCE&lt;15, sales5y&lt;10</div></td>
+      <td class="num">₹1,149.00</td>
       <td class="num">₹7,648 cr</td>
       <td class="num weak">3.14%</td>
       <td class="num ok">168%</td>
@@ -1316,9 +1433,11 @@
       <td class="num">11%</td>
       <td class="num ok">0.37</td>
       <td class="num">45.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">KPRMILL</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">209.6</td>
+    </tr><tr class="company-row" data-search="KPRMILL K P R Mill Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/KPRMILL/consolidated/" target="_blank" rel="noopener">KPRMILL</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">K P R Mill Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹1,104.00</td>
       <td class="num">₹37,745 cr</td>
       <td class="num ok">19.6%</td>
       <td class="num ok">15.7%</td>
@@ -1327,9 +1446,11 @@
       <td class="num">20%</td>
       <td class="num ok">0.1</td>
       <td class="num">41.4</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">GARFIBRES</span><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span>
+      <td class="num score">47.3</td>
+    </tr><tr class="company-row" data-search="GARFIBRES Garware Technical Fibres Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/GARFIBRES/consolidated/" target="_blank" rel="noopener">GARFIBRES</a><span class="badge flag" title="sales5y&lt;10, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Garware Technical Fibres Ltd</div><div class="fails">misses: sales5y&lt;10, profit5y&lt;12</div></td>
+      <td class="num">₹765.00</td>
       <td class="num">₹7,468 cr</td>
       <td class="num ok">22%</td>
       <td class="num ok">16.1%</td>
@@ -1338,24 +1459,26 @@
       <td class="num">19%</td>
       <td class="num ok">0.03</td>
       <td class="num">33.9</td>
+      <td class="num score">45.1</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="real-estate" data-kind="realestate" data-industry="Real Estate">
       <div class="ind-head">
         <h3>Real Estate <span class="kind realestate">realestate</span></h3>
-        <span class="cov">7/7 screened</span>
+        <span class="cov">7/7 screened · 0 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Pre-sales/bookings growth (lead), net debt, collections — use NAV not P/E</p>
       <p class="note">Revenue-recognition lag makes ROCE/ROE fail by design — that is normal here.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">PHOENIXLTD</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+        <tbody><tr class="company-row" data-search="PHOENIXLTD Phoenix Mills Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/PHOENIXLTD/consolidated/" target="_blank" rel="noopener">PHOENIXLTD</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Phoenix Mills Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹1,922.00</td>
       <td class="num">₹68,731 cr</td>
       <td class="num weak">12.4%</td>
       <td class="num weak">11%</td>
@@ -1364,9 +1487,11 @@
       <td class="num">60%</td>
       <td class="num ok">0.48</td>
       <td class="num">53</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BRIGADE</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+      <td class="num score">122</td>
+    </tr><tr class="company-row" data-search="BRIGADE Brigade Enterprises Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BRIGADE/consolidated/" target="_blank" rel="noopener">BRIGADE</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Brigade Enterprises Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹586.00</td>
       <td class="num">₹19,127 cr</td>
       <td class="num weak">10.5%</td>
       <td class="num weak">10.5%</td>
@@ -1375,9 +1500,11 @@
       <td class="num">26%</td>
       <td class="num ok">0.93</td>
       <td class="num">28.1</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">GODREJPROP</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+      <td class="num score">119.3</td>
+    </tr><tr class="company-row" data-search="GODREJPROP Godrej Properties Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/GODREJPROP/consolidated/" target="_blank" rel="noopener">GODREJPROP</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Godrej Properties Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹1,624.00</td>
       <td class="num">₹48,906 cr</td>
       <td class="num weak">7.63%</td>
       <td class="num weak">8.82%</td>
@@ -1386,24 +1513,26 @@
       <td class="num">-11%</td>
       <td class="num ok">0.83</td>
       <td class="num">30.2</td>
+      <td class="num score">106.9</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="consumer-durables-%26-electricals" data-kind="general" data-industry="Consumer Durables &amp; Electricals">
       <div class="ind-head">
         <h3>Consumer Durables &amp; Electricals <span class="kind general">general</span></h3>
-        <span class="cov">8/8 screened</span>
+        <span class="cov">8/8 screened · 2 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Volume growth, premiumisation, OPM, working capital, ROCE</p>
       <p class="note">Cables/wires and cooling names lead on returns + growth.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">POLYCAB</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="POLYCAB Polycab India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/POLYCAB/consolidated/" target="_blank" rel="noopener">POLYCAB</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Polycab India Ltd</div></td>
+      <td class="num">₹8,350.00</td>
       <td class="num">₹125,840 cr</td>
       <td class="num ok">33.2%</td>
       <td class="num ok">23%</td>
@@ -1412,9 +1541,11 @@
       <td class="num">14%</td>
       <td class="num ok">0.02</td>
       <td class="num">43.9</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">BLUESTARCO</span><span class="badge pass">PASS</span>
+      <td class="num score">81.7</td>
+    </tr><tr class="company-row" data-search="BLUESTARCO Blue Star Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/BLUESTARCO/consolidated/" target="_blank" rel="noopener">BLUESTARCO</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Blue Star Ltd</div></td>
+      <td class="num">₹1,602.00</td>
       <td class="num">₹32,941 cr</td>
       <td class="num ok">21.2%</td>
       <td class="num ok">17.2%</td>
@@ -1423,9 +1554,11 @@
       <td class="num">7%</td>
       <td class="num ok">0.24</td>
       <td class="num">62.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">KEI</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">75.4</td>
+    </tr><tr class="company-row" data-search="KEI KEI Industries Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/KEI/consolidated/" target="_blank" rel="noopener">KEI</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">KEI Industries Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹4,699.00</td>
       <td class="num">₹44,919 cr</td>
       <td class="num ok">20%</td>
       <td class="num weak">14.7%</td>
@@ -1434,24 +1567,26 @@
       <td class="num">11%</td>
       <td class="num ok">0.04</td>
       <td class="num">45.1</td>
+      <td class="num score">59.7</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="electronics-manufacturing-%28ems%29" data-kind="general" data-industry="Electronics Manufacturing (EMS)">
       <div class="ind-head">
         <h3>Electronics Manufacturing (EMS) <span class="kind general">general</span></h3>
-        <span class="cov">6/6 screened</span>
+        <span class="cov">6/6 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> Order book, client wins, revenue growth, asset turns, ROCE (thin margins are structural)</p>
       <p class="note">Judge on ROCE + asset turns + growth, not margin.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">KAYNES</span><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span>
+        <tbody><tr class="company-row" data-search="KAYNES Kaynes Technology India Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/KAYNES/consolidated/" target="_blank" rel="noopener">KAYNES</a><span class="badge flag" title="ROCE&lt;15, ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Kaynes Technology India Ltd</div><div class="fails">misses: ROCE&lt;15, ROE&lt;15</div></td>
+      <td class="num">₹3,270.00</td>
       <td class="num">₹21,979 cr</td>
       <td class="num weak">12.7%</td>
       <td class="num weak">8.69%</td>
@@ -1460,9 +1595,11 @@
       <td class="num">16%</td>
       <td class="num ok">0.19</td>
       <td class="num">63.3</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">DIXON</span><span class="badge pass">PASS</span>
+      <td class="num score">100.4</td>
+    </tr><tr class="company-row" data-search="DIXON Dixon Technologies (India) Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/DIXON/consolidated/" target="_blank" rel="noopener">DIXON</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Dixon Technologies (India) Ltd</div></td>
+      <td class="num">₹12,850.00</td>
       <td class="num">₹78,604 cr</td>
       <td class="num ok">29.2%</td>
       <td class="num ok">18.9%</td>
@@ -1471,9 +1608,11 @@
       <td class="num">3.6%</td>
       <td class="num ok">0.21</td>
       <td class="num">41.9</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">SYRMA</span><span class="badge flag" title="ROE&lt;15">flagged</span>
+      <td class="num score">90.6</td>
+    </tr><tr class="company-row" data-search="SYRMA Syrma SGS Technology Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/SYRMA/consolidated/" target="_blank" rel="noopener">SYRMA</a><span class="badge flag" title="ROE&lt;15">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Syrma SGS Technology Ltd</div><div class="fails">misses: ROE&lt;15</div></td>
+      <td class="num">₹1,698.00</td>
       <td class="num">₹32,733 cr</td>
       <td class="num ok">16.8%</td>
       <td class="num weak">14%</td>
@@ -1482,24 +1621,26 @@
       <td class="num">11%</td>
       <td class="num ok">0.14</td>
       <td class="num">88.1</td>
+      <td class="num score">68.8</td>
     </tr></tbody>
       </table></div>
-    </section><section class="ind">
+    </section><section class="ind" id="specialty-chemicals" data-kind="general" data-industry="Specialty Chemicals">
       <div class="ind-head">
         <h3>Specialty Chemicals <span class="kind general">general</span></h3>
-        <span class="cov">9/9 screened</span>
+        <span class="cov">9/9 screened · 1 PASS</span>
       </div>
       <p class="kpi"><b>Deciding metric:</b> ROCE &gt;18%, OPM &gt;18%, R&amp;D, China+1 wins, capex runway, asset turns</p>
       <p class="note">FY23-26 down-cycle depresses trailing growth for several quality names.</p>
       <div class="twrap"><table>
         <thead><tr>
-          <th>Company</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
+          <th>Company</th><th class="num">Price</th><th class="num">Mkt Cap</th><th class="num">ROCE</th>
           <th class="num">ROE</th><th class="num">Sales 5y</th><th class="num">PAT 5y</th>
-          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th>
+          <th class="num">OPM</th><th class="num">D/E</th><th class="num">P/E</th><th class="num">Score</th>
         </tr></thead>
-        <tbody><tr>
-      <td class="tk"><span class="sym">NAVINFLUOR</span><span class="badge pass">PASS</span>
+        <tbody><tr class="company-row" data-search="NAVINFLUOR Navin Fluorine International Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/NAVINFLUOR/consolidated/" target="_blank" rel="noopener">NAVINFLUOR</a><span class="badge pass">PASS</span><span class="badge fresh">fresh</span>
         <div class="cname">Navin Fluorine International Ltd</div></td>
+      <td class="num">₹8,280.00</td>
       <td class="num">₹42,489 cr</td>
       <td class="num ok">21%</td>
       <td class="num ok">19.6%</td>
@@ -1508,9 +1649,11 @@
       <td class="num">34%</td>
       <td class="num ok">0.32</td>
       <td class="num">53.5</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">VINATIORGA</span><span class="badge flag" title="ROE&lt;15, profit5y&lt;12">flagged</span>
+      <td class="num score">62.6</td>
+    </tr><tr class="company-row" data-search="VINATIORGA Vinati Organics Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/VINATIORGA/consolidated/" target="_blank" rel="noopener">VINATIORGA</a><span class="badge flag" title="ROE&lt;15, profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Vinati Organics Ltd</div><div class="fails">misses: ROE&lt;15, profit5y&lt;12</div></td>
+      <td class="num">₹1,135.00</td>
       <td class="num">₹11,764 cr</td>
       <td class="num ok">19.8%</td>
       <td class="num weak">14.9%</td>
@@ -1519,9 +1662,11 @@
       <td class="num">28%</td>
       <td class="num ok">0</td>
       <td class="num">26.2</td>
-    </tr><tr>
-      <td class="tk"><span class="sym">CLEAN</span><span class="badge flag" title="profit5y&lt;12">flagged</span>
+      <td class="num score">49.2</td>
+    </tr><tr class="company-row" data-search="CLEAN Clean Science &amp; Technology Ltd" data-status="fresh">
+      <td class="tk"><a class="sym" href="https://www.screener.in/company/CLEAN/consolidated/" target="_blank" rel="noopener">CLEAN</a><span class="badge flag" title="profit5y&lt;12">flagged</span><span class="badge fresh">fresh</span>
         <div class="cname">Clean Science &amp; Technology Ltd</div><div class="fails">misses: profit5y&lt;12</div></td>
+      <td class="num">₹806.00</td>
       <td class="num">₹8,564 cr</td>
       <td class="num ok">20.7%</td>
       <td class="num ok">15.3%</td>
@@ -1530,19 +1675,27 @@
       <td class="num">36%</td>
       <td class="num ok">0</td>
       <td class="num">36.8</td>
+      <td class="num score">44</td>
     </tr></tbody>
       </table></div>
-    </section></div>
+    </section></div></div>
 
-  <footer>
-    Generated by an open-source screening pipeline · data © screener.in ·
-    metrics are trailing/approximate — verify on the source before use.
-  </footer>
+  <div class="lower">
+    <section class="panel"><h2>Highest-scoring PASS rows</h2><p>Mechanical screen leaders only; score is not a forecast or recommendation.</p><ol class="leaders"><li><a href="https://www.screener.in/company/MCX/consolidated/" target="_blank" rel="noopener"><b>MCX</b></a> Multi Commodity Exchange of India Ltd <span>173.7</span></li><li><a href="https://www.screener.in/company/BSE/consolidated/" target="_blank" rel="noopener"><b>BSE</b></a> BSE Ltd <span>166.5</span></li><li><a href="https://www.screener.in/company/HINDZINC/consolidated/" target="_blank" rel="noopener"><b>HINDZINC</b></a> Hindustan Zinc Ltd <span>158.6</span></li><li><a href="https://www.screener.in/company/NAZARA/consolidated/" target="_blank" rel="noopener"><b>NAZARA</b></a> Nazara Technologies Ltd <span>151.2</span></li><li><a href="https://www.screener.in/company/SOLARINDS/consolidated/" target="_blank" rel="noopener"><b>SOLARINDS</b></a> Solar Industries India Ltd <span>108.7</span></li><li><a href="https://www.screener.in/company/CAMS/consolidated/" target="_blank" rel="noopener"><b>CAMS</b></a> Computer Age Management Services Ltd <span>102.3</span></li><li><a href="https://www.screener.in/company/CUMMINSIND/consolidated/" target="_blank" rel="noopener"><b>CUMMINSIND</b></a> Cummins India Ltd <span>96.7</span></li><li><a href="https://www.screener.in/company/MAZDOCK/consolidated/" target="_blank" rel="noopener"><b>MAZDOCK</b></a> Mazagon Dock Shipbuilders Ltd <span>94.7</span></li></ol></section>
+    <section class="panel"><h2>Refresh contract</h2><p>Source: screener.in company pages. Current run: unknown.</p><p>Latest fetch failures are not silently replaced: prior successful rows are carried forward and labelled, while missing names remain visible through coverage counts.</p></section>
+  </div>
+
+  <footer>Generated by the open-source screening pipeline · verify all figures independently · data © screener.in</footer>
 </div>
 <script>
-  function tt(){var r=document.documentElement;var d=r.getAttribute('data-theme');
-    var cur=d||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-    r.setAttribute('data-theme',cur==='dark'?'light':'dark');}
+  function tt(){var r=document.documentElement;var d=r.getAttribute('data-theme');var cur=d||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark');}
+  function applyFilters(){var q=(document.getElementById('search').value||'').toLowerCase().trim(), k=document.getElementById('kind').value, quality=document.getElementById('quality').value, visible=0, total=0;
+    document.querySelectorAll('.ind').forEach(function(ind){var kindOk=!k||ind.dataset.kind===k, rows=ind.querySelectorAll('.company-row'), indVisible=0;
+      rows.forEach(function(row){var searchOk=!q||row.dataset.search.toLowerCase().includes(q), status=row.dataset.status, pass=row.querySelector('.badge.pass'), qualityOk=!quality||(quality==='pass'&&pass)||(quality==='flag'&&!pass&&status!=='carried_forward')||(quality==='carry'&&status==='carried_forward'); var show=kindOk&&searchOk&&qualityOk; row.style.display=show?'':'none'; if(show){indVisible++;visible++;} total++;});
+      ind.classList.toggle('hidden',indVisible===0);
+    }); document.getElementById('count').textContent=visible+' visible rows · '+total+' total rows';}
+  function resetFilters(){document.getElementById('search').value='';document.getElementById('kind').value='';document.getElementById('quality').value='';applyFilters();}
+  document.getElementById('search').addEventListener('input',applyFilters);document.getElementById('kind').addEventListener('change',applyFilters);document.getElementById('quality').addEventListener('change',applyFilters);applyFilters();
 </script>
 </body>
 </html>
