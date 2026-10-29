@@ -20,6 +20,8 @@ def fmt(v, suffix="", dash="—"):
         return dash
     if suffix == "cr":
         return f"₹{v:,.0f} cr"
+    if suffix == "₹":
+        return f"₹{v:,.2f}"
     return f"{v:g}{suffix}"
 
 
