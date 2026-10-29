@@ -2,8 +2,8 @@ name: Refresh industry screen
 
 on:
   schedule:
-    # 1st and 15th of every month at 02:30 UTC (~08:00 IST) — a ~two-week cadence
-    - cron: "30 2 1,15 * *"
+    # Every day at 02:30 UTC (~08:00 IST). GitHub may delay scheduled jobs slightly.
+    - cron: "30 2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -16,6 +16,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -39,6 +40,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes this run."
           else
-            git commit -m "Bi-weekly screen refresh ($(date -u +%Y-%m-%d))"
+            git commit -m "Daily industry screen refresh ($(date -u +%Y-%m-%d))"
             git push
           fi
