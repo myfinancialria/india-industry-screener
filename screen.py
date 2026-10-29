@@ -12,6 +12,7 @@ real-estate sectors structurally fail the quality filter.
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 from universe import INDUSTRIES, BASE_FILTER
 from scrape import scrape_all
@@ -64,33 +65,98 @@ def evaluate(m, kind):
     return round(score, 1), (len(fails) == 0), fails
 
 
+def _previous_rows():
+    """Flatten the prior published top rows for safe carry-forward on fetch failure."""
+    if not os.path.exists(OUT):
+        return {}
+    try:
+        with open(OUT) as f:
+            prior = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    rows = {}
+    for ind in prior.get("industries", []):
+        for row in ind.get("top3", []):
+            if row.get("ticker"):
+                rows[row["ticker"]] = row
+    return rows
+
+
 def run(log=print):
+    run_utc = datetime.now(timezone.utc)
+    run_at = run_utc.strftime("%Y-%m-%d %H:%M UTC")
+    run_at_ist = run_utc.astimezone(ZoneInfo("Asia/Kolkata")).strftime("%Y-%m-%d %H:%M IST")
     all_tickers = [t for ind in INDUSTRIES for t in ind["tickers"]]
-    log(f"Scraping {len(set(all_tickers))} unique tickers across {len(INDUSTRIES)} industries...")
-    metrics = scrape_all(all_tickers, log=log)
+    unique_tickers = list(dict.fromkeys(all_tickers))
+    log(f"Scraping {len(unique_tickers)} unique tickers across {len(INDUSTRIES)} industries...")
+    metrics = scrape_all(unique_tickers, log=log)
+
+    previous = _previous_rows()
+    failed_tickers = []
+    fresh_count = 0
+    carried_count = 0
+    for ticker in unique_tickers:
+        metric = metrics.get(ticker, {})
+        if metric.get("ok"):
+            metric["data_status"] = "fresh"
+            metric["source_fetched_at"] = run_at
+            fresh_count += 1
+            continue
+        failed_tickers.append(ticker)
+        prior = previous.get(ticker)
+        if prior:
+            carried = dict(prior)
+            carried["data_status"] = "carried_forward"
+            carried["fetch_error"] = "Latest fetch failed; prior successful snapshot retained."
+            metrics[ticker] = carried
+            carried_count += 1
 
     industries_out = []
+    fresh_top_count = 0
+    carried_top_count = 0
     for ind in INDUSTRIES:
         cands = []
-        for t in ind["tickers"]:
-            m = metrics.get(t, {})
-            if not m.get("ok"):
+        for ticker in ind["tickers"]:
+            metric = metrics.get(ticker, {})
+            if not metric.get("ok"):
                 continue
-            score, passed, fails = evaluate(m, ind["kind"])
-            cands.append({**m, "score": score, "passed": passed, "fails": fails})
+            score, passed, fails = evaluate(metric, ind["kind"])
+            row = {**metric, "score": score, "passed": passed, "fails": fails}
+            cands.append(row)
         cands.sort(key=lambda c: c["score"], reverse=True)
         top3 = cands[:3]
+        fresh_top_count += sum(1 for row in top3 if row.get("data_status") == "fresh")
+        carried_top_count += sum(1 for row in top3 if row.get("data_status") == "carried_forward")
         industries_out.append({
             "name": ind["name"], "group": ind["group"], "kind": ind["kind"],
             "kpi": ind["kpi"], "note": ind["note"],
-            "candidates_fetched": len(cands), "candidates_total": len(ind["tickers"]),
+            "candidates_fetched": sum(1 for row in cands if row.get("data_status") in ("fresh", "carried_forward")),
+            "candidates_fresh": sum(1 for row in cands if row.get("data_status") == "fresh"),
+            "candidates_carried_forward": sum(1 for row in cands if row.get("data_status") == "carried_forward"),
+            "candidates_total": len(ind["tickers"]),
             "top3": top3,
         })
-        names = ", ".join(f"{c['ticker']}({'PASS' if c['passed'] else 'flag'})" for c in top3)
+        names = ", ".join(f"{row['ticker']}({'PASS' if row['passed'] else 'flag'})" for row in top3)
         log(f"  {ind['name']}: {names}")
 
+    if failed_tickers:
+        log(f"\nFetch failures ({len(failed_tickers)}): {', '.join(failed_tickers)}")
+    source_status = "fresh" if not failed_tickers else (
+        "partial refresh with carry-forward" if carried_count else "partial refresh"
+    )
     data = {
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "generated_at": run_at,
+        "generated_at_ist": run_at_ist,
+        "source": "screener.in",
+        "source_url": "https://www.screener.in/",
+        "source_status": source_status,
+        "fresh_count": fresh_count,
+        "fresh_top_count": fresh_top_count,
+        "carried_forward_count": carried_count,
+        "carried_forward_top_count": carried_top_count,
+        "failed_count": len(failed_tickers),
+        "failed_tickers": failed_tickers,
+        "coverage_ratio": round((fresh_count + carried_count) / len(unique_tickers), 3) if unique_tickers else 0,
         "base_filter": BASE_FILTER,
         "industry_count": len(industries_out),
         "industries": industries_out,
