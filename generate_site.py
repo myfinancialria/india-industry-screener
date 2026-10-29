@@ -98,7 +98,7 @@ def render(data):
     companies = [c for ind in data["industries"] for c in ind["top3"]]
     pass_count = sum(1 for c in companies if c.get("passed"))
     carry_count = sum(1 for c in companies if c.get("data_status") == "carried_forward")
-    fresh_count = data.get("fresh_count", len(companies) - carry_count)
+    fresh_count = data.get("fresh_top_count", data.get("fresh_count", len(companies) - carry_count))
     total_candidates = sum(i["candidates_total"] for i in data["industries"])
     fetched_candidates = sum(i["candidates_fetched"] for i in data["industries"])
     leaders = sorted((c for c in companies if c.get("passed")), key=lambda x: x.get("score", 0), reverse=True)[:8]
