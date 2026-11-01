@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-31 08:36 UTC",
-  "generated_at_ist": "2026-10-31 14:06 IST",
+  "generated_at": "2026-11-01 09:28 UTC",
+  "generated_at_ist": "2026-11-01 14:58 IST",
   "source": "screener.in",
   "source_url": "https://www.screener.in/",
   "source_status": "partial refresh with carry-forward",
@@ -50,7 +50,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 65.7,
           "passed": false,
           "fails": [
@@ -71,7 +71,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 64.8,
           "passed": true,
           "fails": []
@@ -90,7 +90,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 61.4,
           "passed": false,
           "fails": [
@@ -124,7 +124,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 105.0,
           "passed": false,
           "fails": [
@@ -145,7 +145,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 80.2,
           "passed": true,
           "fails": []
@@ -164,7 +164,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 79.5,
           "passed": false,
           "fails": [
@@ -190,7 +190,7 @@
           "name": "Muthoot Finance Ltd",
           "mcap": 96698.0,
           "price": 2409.0,
-          "pe": 8.5,
+          "pe": 7.93,
           "roce": 15.8,
           "roe": 30.9,
           "sales_cagr_5y": 22.0,
@@ -198,7 +198,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 91.3,
           "passed": true,
           "fails": []
@@ -217,7 +217,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 86.3,
           "passed": true,
           "fails": []
@@ -236,7 +236,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 84.1,
           "passed": true,
           "fails": []
@@ -268,7 +268,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 87.2,
           "passed": true,
           "fails": []
@@ -287,7 +287,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 66.8,
           "passed": false,
           "fails": [
@@ -308,7 +308,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 44.6,
           "passed": false,
           "fails": [
@@ -343,7 +343,7 @@
           "opm": 4.7,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 144.7,
           "passed": false,
           "fails": [
@@ -364,7 +364,7 @@
           "opm": 1.1,
           "de": 0.16,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 31.0,
           "passed": false,
           "fails": [
@@ -423,7 +423,7 @@
           "opm": -2.5,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 13.4,
           "passed": false,
           "fails": [
@@ -446,7 +446,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 0.0,
           "passed": false,
           "fails": [
@@ -469,7 +469,7 @@
           "opm": null,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 0.0,
           "passed": false,
           "fails": [
@@ -505,7 +505,7 @@
           "opm": 72.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 173.7,
           "passed": true,
           "fails": []
@@ -524,7 +524,7 @@
           "opm": 64.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 166.5,
           "passed": true,
           "fails": []
@@ -543,7 +543,7 @@
           "opm": 46.0,
           "de": 0.04,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 102.3,
           "passed": true,
           "fails": []
@@ -575,7 +575,7 @@
           "opm": 26.0,
           "de": 0.1,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 124.3,
           "passed": false,
           "fails": [
@@ -596,7 +596,7 @@
           "opm": 17.0,
           "de": 0.07,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 94.1,
           "passed": true,
           "fails": []
@@ -615,7 +615,7 @@
           "opm": 24.0,
           "de": 0.09,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 82.4,
           "passed": false,
           "fails": [
@@ -649,7 +649,7 @@
           "opm": 22.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 337.0,
           "passed": false,
           "fails": [
@@ -671,7 +671,7 @@
           "opm": 24.0,
           "de": 0.08,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 159.5,
           "passed": false,
           "fails": [
@@ -693,7 +693,7 @@
           "opm": 18.0,
           "de": 0.27,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 116.5,
           "passed": false,
           "fails": [
@@ -728,7 +728,7 @@
           "opm": 32.0,
           "de": 0.29,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 83.6,
           "passed": true,
           "fails": []
@@ -747,7 +747,7 @@
           "opm": 27.0,
           "de": 0.03,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 74.6,
           "passed": true,
           "fails": []
@@ -766,7 +766,7 @@
           "opm": 33.0,
           "de": 0.77,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 54.6,
           "passed": true,
           "fails": []
@@ -798,7 +798,7 @@
           "opm": 18.0,
           "de": 1.21,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 126.0,
           "passed": false,
           "fails": [
@@ -819,7 +819,7 @@
           "opm": 15.0,
           "de": 0.9,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 86.1,
           "passed": true,
           "fails": []
@@ -838,7 +838,7 @@
           "opm": 27.0,
           "de": 0.33,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 72.9,
           "passed": false,
           "fails": [
@@ -873,7 +873,7 @@
           "opm": 19.0,
           "de": 4.49,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 95.0,
           "passed": false,
           "fails": [
@@ -895,7 +895,7 @@
           "opm": 25.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 82.0,
           "passed": true,
           "fails": []
@@ -914,7 +914,7 @@
           "opm": 14.0,
           "de": 3.48,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 82.0,
           "passed": false,
           "fails": [
@@ -948,7 +948,7 @@
           "opm": 11.0,
           "de": 0.4,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 72.9,
           "passed": true,
           "fails": []
@@ -967,7 +967,7 @@
           "opm": 13.0,
           "de": 0.01,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 52.6,
           "passed": false,
           "fails": [
@@ -988,7 +988,7 @@
           "opm": 10.0,
           "de": 0.1,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 50.5,
           "passed": false,
           "fails": [
@@ -1022,7 +1022,7 @@
           "opm": 58.0,
           "de": 0.22,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 158.6,
           "passed": true,
           "fails": []
@@ -1041,7 +1041,7 @@
           "opm": 12.0,
           "de": 0.36,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 79.0,
           "passed": true,
           "fails": []
@@ -1060,7 +1060,7 @@
           "opm": 29.0,
           "de": 0.19,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 61.0,
           "passed": false,
           "fails": [
@@ -1094,7 +1094,7 @@
           "opm": 16.0,
           "de": 1.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 42.2,
           "passed": false,
           "fails": [
@@ -1116,7 +1116,7 @@
           "opm": 19.0,
           "de": 0.4,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 35.3,
           "passed": false,
           "fails": [
@@ -1139,7 +1139,7 @@
           "opm": 9.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 32.6,
           "passed": false,
           "fails": [
@@ -1175,7 +1175,7 @@
           "opm": 20.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 96.7,
           "passed": true,
           "fails": []
@@ -1194,7 +1194,7 @@
           "opm": 19.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 84.3,
           "passed": true,
           "fails": []
@@ -1213,7 +1213,7 @@
           "opm": 11.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 65.6,
           "passed": true,
           "fails": []
@@ -1245,7 +1245,7 @@
           "opm": 27.0,
           "de": 0.24,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 108.7,
           "passed": true,
           "fails": []
@@ -1264,7 +1264,7 @@
           "opm": 16.0,
           "de": 0.08,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 94.7,
           "passed": true,
           "fails": []
@@ -1283,7 +1283,7 @@
           "opm": 28.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 82.8,
           "passed": true,
           "fails": []
@@ -1315,7 +1315,7 @@
           "opm": 39.0,
           "de": 0.82,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 75.3,
           "passed": true,
           "fails": []
@@ -1334,7 +1334,7 @@
           "opm": 19.0,
           "de": 0.73,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 41.7,
           "passed": false,
           "fails": [
@@ -1356,7 +1356,7 @@
           "opm": 20.0,
           "de": 1.93,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 41.2,
           "passed": false,
           "fails": [
@@ -1392,7 +1392,7 @@
           "opm": 4.9,
           "de": 0.62,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 69.9,
           "passed": true,
           "fails": []
@@ -1411,7 +1411,7 @@
           "opm": 9.0,
           "de": 0.6,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 54.7,
           "passed": true,
           "fails": []
@@ -1430,7 +1430,7 @@
           "opm": 15.0,
           "de": 0.11,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 49.4,
           "passed": false,
           "fails": [
@@ -1464,7 +1464,7 @@
           "opm": 8.0,
           "de": 0.17,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 81.7,
           "passed": true,
           "fails": []
@@ -1483,7 +1483,7 @@
           "opm": 24.0,
           "de": 0.03,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 70.9,
           "passed": true,
           "fails": []
@@ -1502,7 +1502,7 @@
           "opm": 19.0,
           "de": 0.21,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 56.6,
           "passed": false,
           "fails": [
@@ -1536,7 +1536,7 @@
           "opm": 57.0,
           "de": 1.31,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 56.9,
           "passed": false,
           "fails": [
@@ -1557,7 +1557,7 @@
           "opm": 54.0,
           "de": 0.56,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 53.6,
           "passed": true,
           "fails": []
@@ -1576,7 +1576,7 @@
           "opm": 20.0,
           "de": 3.93,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 49.2,
           "passed": false,
           "fails": [
@@ -1613,7 +1613,7 @@
           "opm": 8.0,
           "de": 0.06,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 151.2,
           "passed": true,
           "fails": []
@@ -1632,7 +1632,7 @@
           "opm": 33.0,
           "de": 0.85,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 65.7,
           "passed": false,
           "fails": [
@@ -1654,7 +1654,7 @@
           "opm": 36.0,
           "de": 0.04,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 45.0,
           "passed": false,
           "fails": [
@@ -1688,7 +1688,7 @@
           "opm": 48.0,
           "de": 0.47,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 62.4,
           "passed": false,
           "fails": [
@@ -1709,7 +1709,7 @@
           "opm": 11.0,
           "de": 0.17,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 56.6,
           "passed": true,
           "fails": []
@@ -1728,7 +1728,7 @@
           "opm": 58.0,
           "de": 0.65,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 53.5,
           "passed": false,
           "fails": [
@@ -1762,7 +1762,7 @@
           "opm": 45.0,
           "de": 0.64,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 88.0,
           "passed": true,
           "fails": []
@@ -1781,7 +1781,7 @@
           "opm": 34.0,
           "de": 0.05,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 72.7,
           "passed": false,
           "fails": [
@@ -1802,7 +1802,7 @@
           "opm": 47.0,
           "de": 1.44,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 69.8,
           "passed": false,
           "fails": [
@@ -1837,7 +1837,7 @@
           "opm": -13.0,
           "de": null,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 29.4,
           "passed": false,
           "fails": [
@@ -1859,7 +1859,7 @@
           "opm": 12.0,
           "de": 17.47,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 4.1,
           "passed": false,
           "fails": [
@@ -1896,7 +1896,7 @@
           "opm": 12.0,
           "de": 0.35,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 209.6,
           "passed": false,
           "fails": [
@@ -1918,7 +1918,7 @@
           "opm": 21.0,
           "de": 0.05,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 47.3,
           "passed": false,
           "fails": [
@@ -1939,7 +1939,7 @@
           "opm": 19.0,
           "de": 0.04,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 45.1,
           "passed": false,
           "fails": [
@@ -1974,7 +1974,7 @@
           "opm": 60.0,
           "de": 0.67,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 122.0,
           "passed": false,
           "fails": [
@@ -1996,7 +1996,7 @@
           "opm": 29.0,
           "de": 0.92,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 119.3,
           "passed": false,
           "fails": [
@@ -2018,7 +2018,7 @@
           "opm": -7.0,
           "de": 1.03,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 106.9,
           "passed": false,
           "fails": [
@@ -2053,7 +2053,7 @@
           "opm": 14.0,
           "de": 0.02,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 81.7,
           "passed": true,
           "fails": []
@@ -2072,7 +2072,7 @@
           "opm": 7.0,
           "de": 0.22,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 75.4,
           "passed": true,
           "fails": []
@@ -2091,7 +2091,7 @@
           "opm": 11.0,
           "de": 0.05,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 59.7,
           "passed": false,
           "fails": [
@@ -2125,7 +2125,7 @@
           "opm": 16.0,
           "de": 0.19,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 100.4,
           "passed": false,
           "fails": [
@@ -2147,7 +2147,7 @@
           "opm": 3.2,
           "de": 0.21,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 90.6,
           "passed": true,
           "fails": []
@@ -2166,7 +2166,7 @@
           "opm": 11.0,
           "de": 0.27,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 68.8,
           "passed": false,
           "fails": [
@@ -2200,7 +2200,7 @@
           "opm": 34.0,
           "de": 0.28,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 62.6,
           "passed": true,
           "fails": []
@@ -2219,7 +2219,7 @@
           "opm": 25.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 49.2,
           "passed": false,
           "fails": [
@@ -2238,10 +2238,10 @@
           "roe": 15.3,
           "sales_cagr_5y": 13.0,
           "profit_cagr_5y": 3.0,
-          "opm": 36.0,
+          "opm": 34.0,
           "de": 0.0,
           "data_status": "fresh",
-          "source_fetched_at": "2026-10-31 08:36 UTC",
+          "source_fetched_at": "2026-11-01 09:28 UTC",
           "score": 44.0,
           "passed": false,
           "fails": [
